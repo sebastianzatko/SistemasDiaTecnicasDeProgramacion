@@ -1,0 +1,9 @@
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\obj\Debug\1Pantalla.csprojAssemblyReference.cache
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\obj\Debug\sistemadia.frm_empleados.resources
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\obj\Debug\sistemadia.frm_login.resources
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\obj\Debug\sistemadia.frm_menuPrincipal.resources
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\obj\Debug\sistemadia.Properties.Resources.resources
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\obj\Debug\1Pantalla.csproj.GenerateResource.cache
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\obj\Debug\1Pantalla.csproj.CoreCompileInputs.cache
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\obj\Debug\sistemadia.exe
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\obj\Debug\sistemadia.pdb

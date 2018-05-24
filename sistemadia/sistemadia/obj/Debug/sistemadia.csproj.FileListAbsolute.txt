@@ -1,0 +1,14 @@
+C:\Users\alexis\Desktop\dia\sistemadia\sistemadia\bin\Debug\sistemadia.exe.config
+C:\Users\alexis\Desktop\dia\sistemadia\sistemadia\bin\Debug\sistemadia.exe
+C:\Users\alexis\Desktop\dia\sistemadia\sistemadia\bin\Debug\sistemadia.pdb
+C:\Users\alexis\Desktop\dia\sistemadia\sistemadia\obj\Debug\sistemadia.csprojResolveAssemblyReference.cache
+C:\Users\alexis\Desktop\dia\sistemadia\sistemadia\obj\Debug\sistemadia.Form1.resources
+C:\Users\alexis\Desktop\dia\sistemadia\sistemadia\obj\Debug\sistemadia.Properties.Resources.resources
+C:\Users\alexis\Desktop\dia\sistemadia\sistemadia\obj\Debug\sistemadia.csproj.GenerateResource.Cache
+C:\Users\alexis\Desktop\dia\sistemadia\sistemadia\obj\Debug\sistemadia.csproj.CoreCompileInputs.cache
+C:\Users\alexis\Desktop\dia\sistemadia\sistemadia\obj\Debug\sistemadia.exe
+C:\Users\alexis\Desktop\dia\sistemadia\sistemadia\obj\Debug\sistemadia.pdb
+C:\Users\alexis\Desktop\dia\sistemadia\sistemadia\obj\Debug\sistemadia.menu.resources
+C:\Users\alexis\Desktop\dia\sistemadia\sistemadia\bin\Debug\Conexion2.dll
+C:\Users\alexis\Desktop\dia\sistemadia\sistemadia\bin\Debug\Conexion2.pdb
+C:\Users\alexis\Desktop\dia\sistemadia\sistemadia\obj\Debug\sistemadia.empleados.resources

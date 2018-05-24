@@ -1,0 +1,100 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace cDatos
+{
+    public class DALUsuario
+    {
+        Conexion conexion = new Conexion();
+        public bool comprobarUsuario(string user,string password) {
+
+            string dbPassword, dbHash;
+            string dbData;
+            
+            string consultarusuario = string.Format("SELECT TOP 1 CONVERT(VARCHAR(MAX),DECRYPTBYPASSPHRASE('password',PASSWORD)) AS PASSWORD FROM USUARIO WHERE DNI='{0}' AND HABILITADO=1", user);
+            DataTable tabla = conexion.LeerPorComando(consultarusuario);
+            if (tabla != null)
+            {
+                dbData = tabla.Rows[0][0].ToString();
+                string[] dbDatapro = dbData.Split(',');
+                dbHash = dbDatapro[0];
+                dbPassword = dbDatapro[1];
+                var md5 = new MD5CryptoServiceProvider();
+                var md5data = md5.ComputeHash(Encoding.ASCII.GetBytes(password + dbHash));
+                string md5encodificando = BitConverter.ToString(md5data).Replace("-", "").ToLower();
+                if (md5encodificando == dbPassword)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            else
+            {
+                return false;
+            }
+
+
+        }
+        public string obtenerPermiso(string usuario)
+        {
+            string permiso;
+            string consultapermiso = string.Format("SELECT TOP 1 PERMISO FROM USUARIO WHERE DNI='{0}'",usuario);
+            DataTable tablapermiso = conexion.LeerPorComando(consultapermiso);
+            permiso = tablapermiso.Rows[0][0].ToString();
+            return permiso;
+            
+        }
+        public int obtenerID(string usuario)
+        {
+            int id;
+            string consultaid = string.Format("SELECT TOP 1 ID_USUARIO FROM USUARIO WHERE DNI='{0}'", usuario);
+            DataTable tablaid = conexion.LeerPorComando(consultaid);
+            string idstring = tablaid.Rows[0][0].ToString();
+            Int32.TryParse(idstring,out id);
+            return id;
+        }
+
+        public DataSet obtenerusuarios()
+        {
+            string consultausuarios ="SELECT ID_USUARIO,DNI,PASSWORD,CARGO,NOMBRE,APELLIDO FROM USUARIO WHERE HABILITADO=1";
+            DataSet usuariosresultado = conexion.LeerPorComando(consultausuarios).DataSet;
+            return usuariosresultado;
+        }
+
+        public bool comprobarusuarioexistente(string username) {
+            string comprobarexistente = String.Format("SELECT DNI FROM USUARIO WHERE DNI='{0}' AND HABILITADO=1",username);
+            DataTable tabladeexistentes = conexion.LeerPorComando(comprobarexistente);
+            int numeroDeExistentes = tabladeexistentes.Rows.Count;
+            if (numeroDeExistentes==0) {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public void insertarnuevousuario(string username,string password, string permiso, string nombre, string apellido) {
+            Int64 dni;
+            Int64.TryParse(username,out dni);
+
+            SqlParameter[] parametros = new SqlParameter[5];
+            parametros[0]=conexion.crearParametro("@dni",dni);
+            parametros[1]=conexion.crearParametro("@contra",password);
+            parametros[2]=conexion.crearParametro("@cargo",permiso);
+            parametros[3]=conexion.crearParametro("@nombre",nombre);
+            parametros[4]=conexion.crearParametro("@apellido",apellido);
+
+            conexion.EscribirPorStoreProcedure("REGISTRARUSUARIO", parametros);
+        }
+    }
+}
