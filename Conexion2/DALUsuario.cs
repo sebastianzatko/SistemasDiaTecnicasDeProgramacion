@@ -7,21 +7,23 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace cDatos
 {
     public class DALUsuario
     {
-        Conexion conexion = new Conexion();
-        public bool comprobarUsuario(string user,string password) {
+        cDatos.Conexion conexion = new cDatos.Conexion();
+        public bool comprobarUsuario(string user, string password) {
 
             string dbPassword, dbHash;
             string dbData;
             
-            string consultarusuario = string.Format("SELECT TOP 1 CONVERT(VARCHAR(MAX),DECRYPTBYPASSPHRASE('password',PASSWORD)) AS PASSWORD FROM USUARIO WHERE DNI='{0}' AND HABILITADO=1", user);
-            DataTable tabla = conexion.LeerPorComando(consultarusuario);
-            if (tabla != null)
+            
+            string consultarusuario = string.Format("SELECT TOP 1 CONVERT(VARCHAR(MAX),DECRYPTBYPASSPHRASE('password',PASSWORD)) AS PASSWORD FROM USUARIO WHERE DNI={0} AND HABILITADO=1", user);
+            DataTable tabla = conexion.LeerPorComando(consultarusuario); 
+            if (tabla.Rows.Count != 0)
             {
-                dbData = tabla.Rows[0][0].ToString();
+                dbData = tabla.Rows[0]["PASSWORD"].ToString();
                 string[] dbDatapro = dbData.Split(',');
                 dbHash = dbDatapro[0];
                 dbPassword = dbDatapro[1];
@@ -48,7 +50,7 @@ namespace cDatos
         public string obtenerPermiso(string usuario)
         {
             string permiso;
-            string consultapermiso = string.Format("SELECT TOP 1 PERMISO FROM USUARIO WHERE DNI='{0}'",usuario);
+            string consultapermiso = string.Format("SELECT TOP 1 CARGO FROM USUARIO WHERE DNI='{0}'",usuario);
             DataTable tablapermiso = conexion.LeerPorComando(consultapermiso);
             permiso = tablapermiso.Rows[0][0].ToString();
             return permiso;

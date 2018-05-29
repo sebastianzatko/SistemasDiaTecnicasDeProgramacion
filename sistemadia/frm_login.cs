@@ -36,13 +36,15 @@ namespace sistemadia
             {
 
 
-                if (user.ingresar(txtbox_dni.Text.ToString(),txtbox_pass.Text.ToString()))
+                if (user.ingresar(txtbox_dni.Text.ToString(), txtbox_pass.Text.ToString()))
                 {
-                
+
                     frm_menuPrincipal men = new frm_menuPrincipal();
-                    men.Parent = this;
                     men.Show();
                     this.Hide();
+                }
+                else {
+                    MessageBox.Show("El login es incorrecto");
                 }
             }
             catch (Exception ERR)

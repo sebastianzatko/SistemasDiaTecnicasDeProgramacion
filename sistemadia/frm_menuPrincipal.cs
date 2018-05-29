@@ -55,7 +55,8 @@ namespace sistemadia
                 btn_productos.Visible = false;
                 btn_usuarios.Visible = false;
 
-            } else if (TIPO == "Gerente")
+            }
+            else if (TIPO == "Gerente")
             {
                 btn_stock.Visible = false;
                 btn_clientes.Visible = false;
@@ -63,14 +64,17 @@ namespace sistemadia
                 btn_productos.Visible = false;
                 btn_usuarios.Visible = false;
 
-            } else if (TIPO== "Cargado de productos") {
+            }
+            else if (TIPO== "Cargado de productos")
+            {
                 
                 btn_clientes.Visible=false;
                 btn_facturas.Visible = false;
                 btn_usuarios.Visible = false;
                 btn_ventas.Visible = false;
 
-            }else if (TIPO == "Administrativo")
+            }
+            else if (TIPO == "Administrador")
             {
                 
                 btn_clientes.Visible = false;

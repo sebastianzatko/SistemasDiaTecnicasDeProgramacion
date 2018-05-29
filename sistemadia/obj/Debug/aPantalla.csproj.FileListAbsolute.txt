@@ -7,3 +7,12 @@ C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\obj\D
 C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\obj\Debug\aPantalla.csproj.CoreCompileInputs.cache
 C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\obj\Debug\sistemadia.exe
 C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\obj\Debug\sistemadia.pdb
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\bin\Debug\sistemadia.exe.config
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\bin\Debug\sistemadia.exe
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\bin\Debug\sistemadia.pdb
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\bin\Debug\Control.dll
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\bin\Debug\Conexion2.dll
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\bin\Debug\Control.pdb
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\bin\Debug\Conexion2.pdb
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\bin\Debug\Conexion2.dll.config
+C:\Users\barbas\Desktop\proyecto-dia-tecnicas-ALEXIS\sistemadia\sistemadia\obj\Debug\aPantalla.csproj.CopyComplete
