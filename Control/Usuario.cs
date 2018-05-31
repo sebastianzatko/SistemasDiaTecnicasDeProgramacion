@@ -12,7 +12,7 @@ namespace bControl
     public class Usuario
     {
         #region Atributos
-        private string str_usernombre, str_userpermiso;
+        private string str_usernombre, str_userpermiso,str_nombre;
         private int int_iduser;
         #endregion
 
@@ -28,6 +28,13 @@ namespace bControl
         {
             get { return str_usernombre; }
             set { str_usernombre = value; }
+        
+        }
+
+        public string Str_nombre
+        {
+            get { return str_nombre; }
+            set { str_nombre = value; }
         }
         public string Str_userpermiso
         {
@@ -44,6 +51,7 @@ namespace bControl
                 this.str_usernombre = username;
                 this.str_userpermiso = conexionusuario.obtenerPermiso(username);
                 this.int_iduser = conexionusuario.obtenerID(username);
+                this.str_nombre = conexionusuario.obtenerUser(username);
                 return true;
             }
             else
@@ -53,9 +61,9 @@ namespace bControl
            
 
         }
-        public DataSet listarusuarios()
+        public DataTable listarusuarios()
         {
-            DataSet tabladeusuarios=conexionusuario.obtenerusuarios();
+            DataTable tabladeusuarios =conexionusuario.obtenerusuarios();
             return tabladeusuarios;
         }
         public bool crearnuevousuario(string username,string password,string nombre, string apellido, string permiso) {

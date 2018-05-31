@@ -65,11 +65,19 @@ namespace cDatos
             Int32.TryParse(idstring,out id);
             return id;
         }
+        public string obtenerUser(string nombre)
+        {
+            string user;
+            string consultapermiso = string.Format("SELECT TOP 1 NOMBRE FROM USUARIO WHERE DNI='{0}'", nombre);
+            DataTable tablapermiso = conexion.LeerPorComando(consultapermiso);
+            user = tablapermiso.Rows[0][0].ToString();
+            return user;
 
-        public DataSet obtenerusuarios()
+        }
+        public DataTable obtenerusuarios()
         {
             string consultausuarios ="SELECT ID_USUARIO,DNI,PASSWORD,CARGO,NOMBRE,APELLIDO FROM USUARIO WHERE HABILITADO=1";
-            DataSet usuariosresultado = conexion.LeerPorComando(consultausuarios).DataSet;
+            DataTable usuariosresultado = conexion.LeerPorComando(consultausuarios);
             return usuariosresultado;
         }
 

@@ -23,7 +23,7 @@ namespace cDatos
          */
         private void Conectar()
         {
-            strCadenaDeConexion = "Data Source=BARBAS-PC\\SQLEXPRESS;Initial Catalog=pruebasistema;Integrated Security=True";
+            strCadenaDeConexion = "Data Source=TCL;Initial Catalog=pruebasistema;Integrated Security=True";
 
             //Instanció un objeto del tipo SqlConnection
             objConexion = new SqlConnection();

@@ -26,10 +26,10 @@ namespace sistemadia
 
         private void empleados_Load(object sender, EventArgs e)
         {
-            DataSet ds;
+            DataTable ds;
             Usuario user = frm_menuPrincipal.user;
             ds = user.listarusuarios();
-            GridVw_usuariosregistrados.DataSource = ds.Tables[0];
+            GridVw_usuariosregistrados.DataSource = ds;
         }
 
         
@@ -45,7 +45,10 @@ namespace sistemadia
             {
                 MessageBox.Show("No se a podido crear usuario");
             }
-
+            DataTable ds;
+            Usuario user = frm_menuPrincipal.user;
+            ds = user.listarusuarios();
+            GridVw_usuariosregistrados.DataSource = ds;
             //No se como refrescar el gridview sin que sea medio tosco :(
         }
     }
