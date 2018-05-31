@@ -28,6 +28,7 @@ namespace sistemadia
         {
             Application.Exit();
         }
+         public static Listaprod nombre;
         public static Usuario user = frm_login.user;
 
         private void Abrirformhija(object formhijo)
@@ -79,7 +80,7 @@ namespace sistemadia
                 
                 btn_clientes.Visible = false;
                 btn_facturas.Visible = false;
-                btn_productos.Visible = false;
+               
                 btn_stock.Visible = false;
                 btn_ventas.Visible = false;
 
@@ -122,7 +123,7 @@ namespace sistemadia
         {
             
             privilegio(user.Str_userpermiso);
-            label_nombreusuario.Text = user.Str_usernombre;
+            label_nombreusuario.Text = user.Str_nombre;
             label_tipousuario.Text = user.Str_userpermiso;
         }
 
@@ -143,6 +144,25 @@ namespace sistemadia
             Abrirformhija(new frm_empleados());
         }
 
-        
+        private void btn_productos_Click(object sender, EventArgs e)
+        {
+            Abrirformhija(new frm_Producto());
+        }
+
+        private void btn_facturas_Click(object sender, EventArgs e)
+        {
+            Abrirformhija(new Facturas());
+        }
+
+        private void bunifuGradientPanel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

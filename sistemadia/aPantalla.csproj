@@ -33,8 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturas.Designer.cs">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_empleados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,8 +75,17 @@
     <Compile Include="frm_menuPrincipal.Designer.cs">
       <DependentUpon>frm_menuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Producto.Designer.cs">
+      <DependentUpon>frm_Producto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Facturas.resx">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_empleados.resx">
       <DependentUpon>frm_empleados.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_menuPrincipal.resx">
       <DependentUpon>frm_menuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Producto.resx">
+      <DependentUpon>frm_Producto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
