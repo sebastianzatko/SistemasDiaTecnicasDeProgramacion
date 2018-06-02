@@ -27,6 +27,9 @@ namespace sistemadia
             GridVw_producto.DataSource = ds;
 
         }
+
+        //TOMY 01-06: EN TEORIA ESTA CONEXION NO TIENE RELEVANCIA ,QUITAR
+
         SqlConnection con = new SqlConnection("Data Source=TCL;Initial Catalog=pruebasistema;Integrated Security=True");
 
         private void Guardar_Click(object sender, EventArgs e)
@@ -35,11 +38,15 @@ namespace sistemadia
             {
                 bControl.Listaprod pro = new bControl.Listaprod();
 
-                pro.Agregar(nombreproductotxt.Text, disponibilidadtxt.Text, preciotxt.Text, tipotxt.Text);
+                pro.Agregar(nombreproductotxt.Text, disponibilidadtxt.Text, preciotxt.Text, tipotxt.Text, codigo_productotxt.Text);
                 
 
                     MessageBox.Show("Se ha creado un nuevo producto");
-                
+                    DataTable ds;
+                    Listaprod nombre = new Listaprod();
+                    ds = nombre.productolist();
+                    GridVw_producto.DataSource = ds;
+
             }
             catch(Exception erro)
             {
@@ -70,5 +77,7 @@ namespace sistemadia
                 }
             }
         }
+
+        
     }
 }

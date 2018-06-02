@@ -41,19 +41,20 @@
             this.btn_stock = new System.Windows.Forms.Button();
             this.btn_productos = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_proveedores = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.bunifuGradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -98,7 +99,7 @@
             this.btn_cerrarsesion.FlatAppearance.BorderSize = 0;
             this.btn_cerrarsesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkBlue;
             this.btn_cerrarsesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrarsesion.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cerrarsesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cerrarsesion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_cerrarsesion.Image = ((System.Drawing.Image)(resources.GetObject("btn_cerrarsesion.Image")));
             this.btn_cerrarsesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -116,7 +117,7 @@
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(12, 40);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(207, 157);
+            this.pictureBox4.Size = new System.Drawing.Size(207, 95);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 6;
             this.pictureBox4.TabStop = false;
@@ -127,7 +128,7 @@
             this.btn_ventas.FlatAppearance.BorderSize = 0;
             this.btn_ventas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkBlue;
             this.btn_ventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ventas.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ventas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_ventas.Image = ((System.Drawing.Image)(resources.GetObject("btn_ventas.Image")));
             this.btn_ventas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -144,7 +145,7 @@
             this.btn_clientes.FlatAppearance.BorderSize = 0;
             this.btn_clientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkBlue;
             this.btn_clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_clientes.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clientes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_clientes.Image = ((System.Drawing.Image)(resources.GetObject("btn_clientes.Image")));
             this.btn_clientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -162,7 +163,7 @@
             this.btn_usuarios.FlatAppearance.BorderSize = 0;
             this.btn_usuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkBlue;
             this.btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_usuarios.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_usuarios.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_usuarios.Image = ((System.Drawing.Image)(resources.GetObject("btn_usuarios.Image")));
             this.btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -180,7 +181,7 @@
             this.btn_facturas.FlatAppearance.BorderSize = 0;
             this.btn_facturas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkBlue;
             this.btn_facturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_facturas.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_facturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_facturas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_facturas.Image = ((System.Drawing.Image)(resources.GetObject("btn_facturas.Image")));
             this.btn_facturas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -198,7 +199,7 @@
             this.btn_stock.FlatAppearance.BorderSize = 0;
             this.btn_stock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkBlue;
             this.btn_stock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_stock.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_stock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_stock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_stock.Image = ((System.Drawing.Image)(resources.GetObject("btn_stock.Image")));
             this.btn_stock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -215,7 +216,7 @@
             this.btn_productos.FlatAppearance.BorderSize = 0;
             this.btn_productos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkBlue;
             this.btn_productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_productos.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_productos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_productos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_productos.Image = ((System.Drawing.Image)(resources.GetObject("btn_productos.Image")));
             this.btn_productos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -237,30 +238,11 @@
             this.panel1.Size = new System.Drawing.Size(238, 788);
             this.panel1.TabIndex = 0;
             // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(238, 27);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1148, 761);
-            this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel2.Controls.Add(this.bunifuGradientPanel2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(238, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1148, 27);
-            this.panel2.TabIndex = 1;
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
-            // 
             // bunifuGradientPanel1
             // 
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.btn_proveedores);
             this.bunifuGradientPanel1.Controls.Add(this.label_tipousuario);
             this.bunifuGradientPanel1.Controls.Add(this.pictureBox4);
             this.bunifuGradientPanel1.Controls.Add(this.label_nombreusuario);
@@ -282,6 +264,26 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(245, 788);
             this.bunifuGradientPanel1.TabIndex = 9;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(238, 27);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1142, 761);
+            this.panel3.TabIndex = 2;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel2.Controls.Add(this.bunifuGradientPanel2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(238, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1142, 27);
+            this.panel2.TabIndex = 1;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // bunifuGradientPanel2
             // 
@@ -349,11 +351,21 @@
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             // 
+            // btn_proveedores
+            // 
+            this.btn_proveedores.Location = new System.Drawing.Point(87, 175);
+            this.btn_proveedores.Name = "btn_proveedores";
+            this.btn_proveedores.Size = new System.Drawing.Size(75, 23);
+            this.btn_proveedores.TabIndex = 11;
+            this.btn_proveedores.Text = "Proveedores";
+            this.btn_proveedores.UseVisualStyleBackColor = true;
+            this.btn_proveedores.Click += new System.EventHandler(this.btn_proveedores_Click);
+            // 
             // frm_menuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1380, 788);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -364,9 +376,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.bunifuGradientPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -397,5 +409,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btn_proveedores;
     }
 }

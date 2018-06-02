@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Conexion.cs" />
     <Compile Include="DALProducto.cs" />
+    <Compile Include="DALProveedor.cs" />
     <Compile Include="DALUsuario.cs" />
     <Compile Include="ErrortextBox.cs">
       <SubType>Component</SubType>
@@ -61,6 +62,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>pruebasistemaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="sistemadiaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sistemadiaDataSet.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +92,17 @@
     </None>
     <None Include="pruebasistemaDataSet.xss">
       <DependentUpon>pruebasistemaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sistemadiaDataSet.xsc">
+      <DependentUpon>sistemadiaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sistemadiaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sistemadiaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sistemadiaDataSet.xss">
+      <DependentUpon>sistemadiaDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

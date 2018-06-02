@@ -151,7 +151,7 @@ namespace sistemadia
 
         private void btn_facturas_Click(object sender, EventArgs e)
         {
-            Abrirformhija(new Facturas());
+            Abrirformhija(new frm_facturas());
         }
 
         private void bunifuGradientPanel2_MouseDown(object sender, MouseEventArgs e)
@@ -163,6 +163,11 @@ namespace sistemadia
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btn_proveedores_Click(object sender, EventArgs e)
+        {
+            Abrirformhija(new frm_Proveedores());
         }
     }
 }

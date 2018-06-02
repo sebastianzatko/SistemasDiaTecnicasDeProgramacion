@@ -29,11 +29,29 @@ namespace cDatos
         }
         public DataTable obtenerproducto()
         {
-            string consulta = "SELECT NOMBRE,DISPONIBILIDAD,PRECIO,TIPO FROM PRODUCTO WHERE HABILITADO=1";
+            string consulta = "SELECT COD_PRODUCTO,NOMBRE,DISPONIBILIDAD,PRECIO,TIPO FROM PRODUCTO WHERE HABILITADO=1";
             DataTable resultado = conexionpro.LeerPorComando(consulta);
             return resultado;
         }
-        public void insertarproducto(string NOMBRE,string DISPONIBILIDAD, string PRECIO, string TIPO)
+        public void insertarproducto(string NOMBRE,string DISPONIBILIDAD, string PRECIO, string TIPO, string COD_PRODUCTO)
+        {
+            Int64 dni;
+            Int64.TryParse(DISPONIBILIDAD, out dni);
+            Decimal pre;
+            Decimal.TryParse(PRECIO, out pre);
+
+            SqlParameter[] parametros = new SqlParameter[5];
+            parametros[0] = conexionpro.crearParametro("@NOMBRE", NOMBRE);
+            parametros[1] = conexionpro.crearParametro("@DISPONIBILIDAD", DISPONIBILIDAD);
+            parametros[2] = conexionpro.crearParametro("@PRECIO", PRECIO);
+            parametros[3] = conexionpro.crearParametro("@TIPO", TIPO);
+            parametros[4] = conexionpro.crearParametro("@COD_PRODUCTO", COD_PRODUCTO);
+
+            conexionpro.EscribirPorStoreProcedure("CARGAPRODUCTO", parametros);
+            
+        }
+
+        public void actualizarproducto(string NOMBRE, string DISPONIBILIDAD, string PRECIO, string TIPO)
         {
             Int64 dni;
             Int64.TryParse(DISPONIBILIDAD, out dni);
@@ -46,8 +64,10 @@ namespace cDatos
             parametros[2] = conexionpro.crearParametro("@PRECIO", PRECIO);
             parametros[3] = conexionpro.crearParametro("@TIPO", TIPO);
 
-            conexionpro.EscribirPorStoreProcedure("CARGAPRODUCTO", parametros);
-            
+            conexionpro.EscribirPorStoreProcedure("MODIFICARPRODUCTO", parametros);
+
         }
+        
+
     }
 }

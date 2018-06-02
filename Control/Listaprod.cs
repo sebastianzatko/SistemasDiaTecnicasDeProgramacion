@@ -9,6 +9,9 @@ using cDatos;
 
 namespace bControl
 {
+
+    // A esta le tendriamos que cambiar el nombre a PRODUCTO
+
     public class Listaprod
     {
         cDatos.DALProducto conexion = new cDatos.DALProducto();
@@ -19,10 +22,10 @@ namespace bControl
              
             }
 
-        public void Agregar(string nombre, string disponiblidad, string precio, string tipo)
+        public void Agregar(string nombre, string disponiblidad, string precio, string tipo, string codigo_producto)
         {
             
-                    conexion.insertarproducto(nombre, disponiblidad, precio, tipo);
+                    conexion.insertarproducto(nombre, disponiblidad, precio, tipo, codigo_producto);
                   
                 
                

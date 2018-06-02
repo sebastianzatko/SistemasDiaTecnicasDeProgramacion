@@ -8,6 +8,9 @@ using System.Windows.Forms;
 
 namespace bControl
 {
+
+    // TOMY 01-06-2018=ESTO HAY QUE PASARLO A UNA CLASE DE BUSCADOR (BUENA SUGERENCIA)
+
     public class autocompletar
     {
         

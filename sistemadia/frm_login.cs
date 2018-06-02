@@ -92,7 +92,7 @@ namespace sistemadia
 
         private void usertxt_MouseEnter(object sender, EventArgs e)
         {
-            usertxt.Text = "";
+            
             usertxt.ForeColor = Color.Black;
         }
 
