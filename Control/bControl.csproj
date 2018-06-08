@@ -43,8 +43,12 @@
   <ItemGroup>
     <Compile Include="autocompletar.cs" />
     <Compile Include="Listaprod.cs" />
+    <Compile Include="Proveedor.cs" />
+    <Compile Include="reportfactu.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="validar.cs" />
+    <Compile Include="VENTASDETALLE.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Conexion2\cDatos.csproj">

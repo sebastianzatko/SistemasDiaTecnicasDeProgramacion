@@ -75,9 +75,11 @@ namespace sistemadia
         string pass = "";
         private void frm_login_Load(object sender, EventArgs e)
         {
+            usertxt.Focus();
             usertxt.Text = "Documento";
             contraseñatxt.Text = "Contraseña";
             contraseñatxt.isPassword = false;
+           
         }
 
         private void bunifuMaterialTextbox2_OnValueChanged(object sender, EventArgs e)

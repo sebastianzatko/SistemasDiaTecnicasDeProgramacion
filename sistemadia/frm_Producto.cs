@@ -25,26 +25,58 @@ namespace sistemadia
             Listaprod nombre = new Listaprod();
             ds = nombre.productolist();
             GridVw_producto.DataSource = ds;
+            codigo_productotxt.Focus();
+           
 
         }
+
+        //TOMY 01-06: EN TEORIA ESTA CONEXION NO TIENE RELEVANCIA ,QUITAR
+
         SqlConnection con = new SqlConnection("Data Source=TCL;Initial Catalog=pruebasistema;Integrated Security=True");
 
         private void Guardar_Click(object sender, EventArgs e)
         {
-            try
+            string codigo;
+            string nombre1;
+            string diponi;
+            string precio;
+           string tipo;
+            codigo = codigo_productotxt.Text;
+            nombre1 = nombreproductotxt.Text;
+            diponi = disponibilidadtxt.Text;
+            precio = preciotxt.Text;
+            tipo = tipotxt.Text;
+
+            if (codigo == "" && nombre1 == "" && diponi == "" && precio == "" && tipo == "")
+            {
+                MessageBox.Show("ERROR  TEXTOS VACIOS","ERROR!!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+
+
+            
+
+                   
+              
+            }
+            else
             {
                 bControl.Listaprod pro = new bControl.Listaprod();
 
-                pro.Agregar(nombreproductotxt.Text, disponibilidadtxt.Text, preciotxt.Text, tipotxt.Text);
-                
+                pro.Agregar(nombreproductotxt.Text, disponibilidadtxt.Text, preciotxt.Text, tipotxt.Text, codigo_productotxt.Text);
 
-                    MessageBox.Show("Se ha creado un nuevo producto");
-                
+
+                MessageBox.Show("Se ha creado un nuevo producto");
+                DataTable ds;
+                Listaprod nombre = new Listaprod();
+                ds = nombre.productolist();
+                GridVw_producto.DataSource = ds;
+
             }
-            catch(Exception erro)
-            {
-                MessageBox.Show("No se a podido crear producto"+erro);
-            }
+            codigo_productotxt.Text = "";
+            nombreproductotxt.Text="";
+            disponibilidadtxt.Text="";
+            preciotxt.Text="";
+            tipotxt.Text="";
+            codigo_productotxt.Focus();
         }
 
         private void GridVw_producto_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -69,6 +101,21 @@ namespace sistemadia
                     }
                 }
             }
+        }
+
+        private void disponibilidadtxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumero(e);
+        }
+
+        private void preciotxt_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void preciotxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeroycomas(e);
         }
     }
 }

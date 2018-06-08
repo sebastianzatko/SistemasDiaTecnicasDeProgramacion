@@ -204,6 +204,7 @@
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.DarkRed;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "frm_login";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frm_login_Load);

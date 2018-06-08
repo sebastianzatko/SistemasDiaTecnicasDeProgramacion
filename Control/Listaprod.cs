@@ -9,6 +9,9 @@ using cDatos;
 
 namespace bControl
 {
+
+    // A esta le tendriamos que cambiar el nombre a PRODUCTO
+
     public class Listaprod
     {
         cDatos.DALProducto conexion = new cDatos.DALProducto();
@@ -18,17 +21,48 @@ namespace bControl
             return tablaproducto;
              
             }
+        public DataTable productostocks()
+        {
+            DataTable tablaproducto = conexion.obtenerstocks();
+            return tablaproducto;
 
-        public void Agregar(string nombre, string disponiblidad, string precio, string tipo)
+        }
+
+       
+        public DataTable buscarproducto(string box)
+        {
+            DataTable tablaproducto = conexion.BUSCAR(box);
+            return tablaproducto;
+
+        }
+
+
+        public void Agregar(string nombre, string disponiblidad, string precio, string tipo, string codigo_producto)
         {
             
-                    conexion.insertarproducto(nombre, disponiblidad, precio, tipo);
+                    conexion.insertarproducto(nombre, disponiblidad, precio, tipo, codigo_producto);
                   
                 
                
         }
 
-            
-        
+        public void actualizar(string nombre, string disponiblidad, string precio, string tipo, string cod_pro)
+        {
+
+            conexion.actualizarproducto(nombre, disponiblidad, precio, tipo, cod_pro);
+
+
+
+
+        }
+        public void ELIMINAR( string cod_pro)
+        {
+
+            conexion.eliminarproducto( cod_pro);
+
+
+
+        }
+
     }
 }
