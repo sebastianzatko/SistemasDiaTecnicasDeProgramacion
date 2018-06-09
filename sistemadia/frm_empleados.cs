@@ -17,11 +17,11 @@ namespace sistemadia
         public frm_empleados()
         {
             InitializeComponent();
-            comboBox1.Items.Add("Administrativo");
-            comboBox1.Items.Add("Vendedor");
-            comboBox1.Items.Add("Gerente");
-            comboBox1.Items.Add("Control Stock");
-            comboBox1.Items.Add("Cargado de productos");
+            cmbox_permiso.Items.Add("Administrativo");
+            cmbox_permiso.Items.Add("Vendedor");
+            cmbox_permiso.Items.Add("Gerente");
+            cmbox_permiso.Items.Add("Control Stock");
+            cmbox_permiso.Items.Add("Cargado de productos");
         }
 
         private void empleados_Load(object sender, EventArgs e)
@@ -30,6 +30,7 @@ namespace sistemadia
             Usuario user = frm_menuPrincipal.user;
             ds = user.listarusuarios();
             GridVw_usuariosregistrados.DataSource = ds;
+            cmbox_permiso.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         
@@ -37,7 +38,7 @@ namespace sistemadia
         private void Guardar_Click(object sender, EventArgs e)
         {
             
-            if (frm_menuPrincipal.user.crearnuevousuario(txtbox_newuserdni.Text, txtbox_newuserpassword.Text, txtbox_newusernombre.Text, txtbox_newuserapellido.Text, comboBox1.Text.Trim()))
+            if (frm_menuPrincipal.user.crearnuevousuario(txtbox_newuserdni.Text, txtbox_newuserpassword.Text, txtbox_newusernombre.Text, txtbox_newuserapellido.Text, cmbox_permiso.Text.Trim()))
             {
                 MessageBox.Show("Se ha creado un nuevo usuario satisfactoriamente");
             }

@@ -17,6 +17,8 @@ namespace sistemadia
         {
             InitializeComponent();
         }
+
+        
         
         private void Producto_Load(object sender, EventArgs e)
         {
@@ -25,6 +27,7 @@ namespace sistemadia
             Listaprod nombre = new Listaprod();
             ds = nombre.productolist();
             GridVw_producto.DataSource = ds;
+            
 
         }
 

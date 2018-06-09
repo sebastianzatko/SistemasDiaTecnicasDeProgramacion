@@ -107,9 +107,9 @@
             this.btn_cerrarsesion.Name = "btn_cerrarsesion";
             this.btn_cerrarsesion.Size = new System.Drawing.Size(198, 34);
             this.btn_cerrarsesion.TabIndex = 7;
-            this.btn_cerrarsesion.Text = "Cerrar Secion";
+            this.btn_cerrarsesion.Text = "Cerrar Sesion";
             this.btn_cerrarsesion.UseVisualStyleBackColor = false;
-            this.btn_cerrarsesion.Click += new System.EventHandler(this.button7_Click);
+            this.btn_cerrarsesion.Click += new System.EventHandler(this.btn_cerrarsesion_Click);
             // 
             // pictureBox4
             // 

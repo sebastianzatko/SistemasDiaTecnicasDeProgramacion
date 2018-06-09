@@ -31,5 +31,22 @@ namespace cDatos
             DataTable tabla_Proveedor = conexion.LeerPorComando(comando);
             return tabla_Proveedor;
         }
+
+        public void eliminar_Proveedor(int id_proveedor) {
+            SqlParameter[] parametro = new SqlParameter[1];
+            parametro[0] = conexion.crearParametro("@id_proveedor",id_proveedor);
+            conexion.EscribirPorStoreProcedure("ELIMINAR_PROVEEDOR",parametro);
+        }
+
+        public void modificar_Proveedor(string idProveedor,string nombre,string direccion,string telefono,string email)
+        {
+            SqlParameter[] parametros = new SqlParameter[5];
+            parametros[0]= conexion.crearParametro("ID_PROVEEDOR",idProveedor);
+            parametros[1]= conexion.crearParametro("NOMBRE",nombre);
+            parametros[2]= conexion.crearParametro("TELEFONO",direccion);
+            parametros[3]= conexion.crearParametro("DIRECCION",telefono);
+            parametros[4] = conexion.crearParametro("EMAIL",email);
+            conexion.EscribirPorStoreProcedure("MODIFICAR_PROVEEDOR",parametros);
+        }
     }
 }

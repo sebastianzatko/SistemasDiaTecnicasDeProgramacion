@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="DALCliente.cs" />
     <Compile Include="DALProducto.cs" />
     <Compile Include="DALProveedor.cs" />
     <Compile Include="DALUsuario.cs" />

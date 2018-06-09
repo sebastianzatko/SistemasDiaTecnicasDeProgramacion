@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="autocompletar.cs" />
+    <Compile Include="Clientes.cs" />
     <Compile Include="Listaprod.cs" />
     <Compile Include="Proveedor.cs" />
     <Compile Include="Usuario.cs" />

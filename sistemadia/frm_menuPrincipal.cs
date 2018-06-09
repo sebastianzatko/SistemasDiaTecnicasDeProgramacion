@@ -51,7 +51,6 @@ namespace sistemadia
             if (TIPO == "Vendedor")
             {
                 btn_stock.Visible = false;
-                btn_clientes.Visible = false;
                 btn_ventas.Visible = false;
                 btn_productos.Visible = false;
                 btn_usuarios.Visible = false;
@@ -127,16 +126,15 @@ namespace sistemadia
             label_tipousuario.Text = user.Str_userpermiso;
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void btn_cerrarsesion_Click(object sender, EventArgs e)
         {
-            frm_login f = new frm_login();
-            f.Show();
-            this.Hide();
+            
+            this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-           
+            Abrirformhija(new frm_Clientes());
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -151,7 +149,7 @@ namespace sistemadia
 
         private void btn_facturas_Click(object sender, EventArgs e)
         {
-            Abrirformhija(new frm_facturas());
+            
         }
 
         private void bunifuGradientPanel2_MouseDown(object sender, MouseEventArgs e)

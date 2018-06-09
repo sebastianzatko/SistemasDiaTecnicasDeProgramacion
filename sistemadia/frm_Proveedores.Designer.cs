@@ -38,7 +38,10 @@
             this.lbl_Telefono = new System.Windows.Forms.Label();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_limipiar = new System.Windows.Forms.Button();
+            this.txt_idproveedor = new System.Windows.Forms.TextBox();
             this.dtView_proveedores = new System.Windows.Forms.DataGridView();
+            this.btn_eliminarProveedores = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtView_proveedores)).BeginInit();
             this.SuspendLayout();
@@ -119,6 +122,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btn_limipiar);
+            this.panel1.Controls.Add(this.txt_idproveedor);
             this.panel1.Controls.Add(this.txtbox_Nombre);
             this.panel1.Controls.Add(this.btn_Guardar);
             this.panel1.Controls.Add(this.txtbox_Direccion);
@@ -133,19 +138,54 @@
             this.panel1.Size = new System.Drawing.Size(228, 321);
             this.panel1.TabIndex = 9;
             // 
+            // btn_limipiar
+            // 
+            this.btn_limipiar.Location = new System.Drawing.Point(34, 33);
+            this.btn_limipiar.Name = "btn_limipiar";
+            this.btn_limipiar.Size = new System.Drawing.Size(75, 23);
+            this.btn_limipiar.TabIndex = 10;
+            this.btn_limipiar.Text = "Limpiar";
+            this.btn_limipiar.UseVisualStyleBackColor = true;
+            this.btn_limipiar.Click += new System.EventHandler(this.btn_limipiar_Click);
+            // 
+            // txt_idproveedor
+            // 
+            this.txt_idproveedor.Location = new System.Drawing.Point(90, 71);
+            this.txt_idproveedor.Name = "txt_idproveedor";
+            this.txt_idproveedor.Size = new System.Drawing.Size(100, 20);
+            this.txt_idproveedor.TabIndex = 9;
+            // 
             // dtView_proveedores
             // 
+            this.dtView_proveedores.AllowUserToAddRows = false;
+            this.dtView_proveedores.AllowUserToDeleteRows = false;
             this.dtView_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtView_proveedores.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dtView_proveedores.Location = new System.Drawing.Point(42, 55);
             this.dtView_proveedores.Name = "dtView_proveedores";
             this.dtView_proveedores.Size = new System.Drawing.Size(594, 226);
             this.dtView_proveedores.TabIndex = 10;
+            this.dtView_proveedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.terminaredit);
+            this.dtView_proveedores.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtView_proveedores_OnCellDoubleClick);
+            this.dtView_proveedores.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtView_proveedores_OnCambiodevalor);
+            // 
+            // btn_eliminarProveedores
+            // 
+            this.btn_eliminarProveedores.Enabled = false;
+            this.btn_eliminarProveedores.Location = new System.Drawing.Point(430, 303);
+            this.btn_eliminarProveedores.Name = "btn_eliminarProveedores";
+            this.btn_eliminarProveedores.Size = new System.Drawing.Size(75, 23);
+            this.btn_eliminarProveedores.TabIndex = 11;
+            this.btn_eliminarProveedores.Text = "Eliminar";
+            this.btn_eliminarProveedores.UseVisualStyleBackColor = true;
+            this.btn_eliminarProveedores.Click += new System.EventHandler(this.btn_eliminarProveedores_Click);
             // 
             // frm_Proveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 450);
+            this.Controls.Add(this.btn_eliminarProveedores);
             this.Controls.Add(this.dtView_proveedores);
             this.Controls.Add(this.panel1);
             this.Name = "frm_Proveedores";
@@ -171,5 +211,8 @@
         private System.Windows.Forms.Button btn_Guardar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dtView_proveedores;
+        private System.Windows.Forms.Button btn_eliminarProveedores;
+        private System.Windows.Forms.TextBox txt_idproveedor;
+        private System.Windows.Forms.Button btn_limipiar;
     }
 }
