@@ -69,6 +69,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>sistemadiaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Ventaspro.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ErrortextBox.resx">

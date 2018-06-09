@@ -93,7 +93,8 @@ namespace cDatos
                 return false;
             }
         }
-        public void insertarnuevousuario(string username,string password, string permiso, string nombre, string apellido) {
+        public void insertarnuevousuario(string username,string password, string permiso, string nombre, string apellido)
+        {
             Int64 dni;
             Int64.TryParse(username,out dni);
 

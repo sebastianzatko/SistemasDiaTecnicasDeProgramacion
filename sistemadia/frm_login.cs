@@ -24,10 +24,20 @@ namespace sistemadia
         {
             Application.Exit();
         }
-        
+
+
+
 
         public static bControl.Usuario user = new bControl.Usuario();
-        
+
+        void menuprincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
+            usertxt.Text = " ";
+            contraseñatxt.Text = " ";
+
+        }
+
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
             try
@@ -53,27 +63,14 @@ namespace sistemadia
 
             }
         }
-
-        void menuprincipal_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            this.Show();
-            usertxt.Text = " ";
-            contraseñatxt.Text = " ";
-            
-    }
-
-       
-
-        private void usertxt_MouseEnter(object sender, EventArgs e)
+        
+        private void frm_login_Load(object sender, EventArgs e)
         {
             
-            usertxt.ForeColor = Color.Black;
+           
         }
 
         
-
-       
-
         private void bunifuThinButton21_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))

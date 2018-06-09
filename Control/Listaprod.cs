@@ -21,6 +21,21 @@ namespace bControl
             return tablaproducto;
              
             }
+        public DataTable productostocks()
+        {
+            DataTable tablaproducto = conexion.obtenerstocks();
+            return tablaproducto;
+
+        }
+
+       
+        public DataTable buscarproducto(string box)
+        {
+            DataTable tablaproducto = conexion.BUSCAR(box);
+            return tablaproducto;
+
+        }
+
 
         public void Agregar(string nombre, string disponiblidad, string precio, string tipo, string codigo_producto)
         {
@@ -31,7 +46,23 @@ namespace bControl
                
         }
 
-            
-        
+        public void actualizar(string nombre, string disponiblidad, string precio, string tipo, string cod_pro)
+        {
+
+            conexion.actualizarproducto(nombre, disponiblidad, precio, tipo, cod_pro);
+
+
+
+
+        }
+        public void ELIMINAR( string cod_pro)
+        {
+
+            conexion.eliminarproducto( cod_pro);
+
+
+
+        }
+
     }
 }

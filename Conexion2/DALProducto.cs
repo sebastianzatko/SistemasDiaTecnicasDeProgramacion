@@ -27,9 +27,22 @@ namespace cDatos
 
             
         }
+       
         public DataTable obtenerproducto()
         {
-            string consulta = "SELECT COD_PRODUCTO,NOMBRE,DISPONIBILIDAD,PRECIO,TIPO FROM PRODUCTO WHERE HABILITADO=1";
+            string consulta = "SELECT COD_PRODUCTO,NOMBRE,PRECIO,TIPO,DISPONIBILIDAD FROM PRODUCTO WHERE HABILITADO=1";
+            DataTable resultado = conexionpro.LeerPorComando(consulta);
+            return resultado;
+        }
+        public DataTable BUSCAR(string text)
+        {
+            string consulta = "SELECT COD_PRODUCTO,NOMBRE,PRECIO,TIPO,DISPONIBILIDAD FROM PRODUCTO WHERE HABILITADO=1 AND NOMBRE Like('%" + text + "%') or TIPO Like('%" + text + "%') ";
+            DataTable resultado = conexionpro.LeerPorComando(consulta);
+            return resultado;
+        }
+        public DataTable obtenerstocks()
+        {
+            string consulta = "SELECT COD_PRODUCTO,NOMBRE,PRECIO,TIPO,DISPONIBILIDAD FROM PRODUCTO WHERE HABILITADO=1 AND DISPONIBILIDAD < 80";
             DataTable resultado = conexionpro.LeerPorComando(consulta);
             return resultado;
         }
@@ -51,23 +64,34 @@ namespace cDatos
             
         }
 
-        public void actualizarproducto(string NOMBRE, string DISPONIBILIDAD, string PRECIO, string TIPO)
+        public void actualizarproducto(string NOMBRE, string DISPONIBILIDAD, string PRECIO, string TIPO,string COD_PRODUCTO)
         {
             Int64 dni;
             Int64.TryParse(DISPONIBILIDAD, out dni);
             Decimal pre;
             Decimal.TryParse(PRECIO, out pre);
 
-            SqlParameter[] parametros = new SqlParameter[4];
+            SqlParameter[] parametros = new SqlParameter[5];
             parametros[0] = conexionpro.crearParametro("@NOMBRE", NOMBRE);
             parametros[1] = conexionpro.crearParametro("@DISPONIBILIDAD", DISPONIBILIDAD);
             parametros[2] = conexionpro.crearParametro("@PRECIO", PRECIO);
             parametros[3] = conexionpro.crearParametro("@TIPO", TIPO);
+            parametros[4] = conexionpro.crearParametro("@COD_PRODUCTO", COD_PRODUCTO);
 
             conexionpro.EscribirPorStoreProcedure("MODIFICARPRODUCTO", parametros);
 
         }
-        
+        public void eliminarproducto( string COD_PRODUCTO)
+        {
+            
+
+            SqlParameter[] parametros = new SqlParameter[1];
+            
+            parametros[0] = conexionpro.crearParametro("@COD_PRODUCTO", COD_PRODUCTO);
+
+            conexionpro.EscribirPorStoreProcedure("ELIMINARPRODUCTO", parametros);
+
+        }
 
     }
 }

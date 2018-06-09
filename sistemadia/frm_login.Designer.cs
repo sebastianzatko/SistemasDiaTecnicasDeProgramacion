@@ -114,7 +114,7 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(245, 442);
             this.bunifuGradientPanel1.TabIndex = 8;
-           
+            
             // 
             // login
             // 
@@ -162,6 +162,7 @@
             this.usertxt.TabIndex = 10;
             this.usertxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             
+            
             // 
             // contraseñatxt
             // 
@@ -182,7 +183,8 @@
             this.contraseñatxt.Size = new System.Drawing.Size(203, 45);
             this.contraseñatxt.TabIndex = 11;
             this.contraseñatxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-         
+            
+           
             // 
             // frm_login
             // 
@@ -200,9 +202,10 @@
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.DarkRed;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "frm_login";
             this.Text = "Form1";
-           
+            this.Load += new System.EventHandler(this.frm_login_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_login_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
