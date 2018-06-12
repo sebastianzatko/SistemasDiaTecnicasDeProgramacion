@@ -40,6 +40,7 @@
             this.btn_stock = new System.Windows.Forms.Button();
             this.btn_productos = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_ordendecompra = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_proveedores = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -64,9 +65,11 @@
             // 
             this.label_tipousuario.AutoSize = true;
             this.label_tipousuario.BackColor = System.Drawing.Color.Transparent;
-            this.label_tipousuario.Location = new System.Drawing.Point(148, 747);
+            this.label_tipousuario.Font = new System.Drawing.Font("Century Gothic", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tipousuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label_tipousuario.Location = new System.Drawing.Point(79, 635);
             this.label_tipousuario.Name = "label_tipousuario";
-            this.label_tipousuario.Size = new System.Drawing.Size(35, 13);
+            this.label_tipousuario.Size = new System.Drawing.Size(47, 17);
             this.label_tipousuario.TabIndex = 10;
             this.label_tipousuario.Text = "label2";
             // 
@@ -74,9 +77,11 @@
             // 
             this.label_nombreusuario.AutoSize = true;
             this.label_nombreusuario.BackColor = System.Drawing.Color.Transparent;
-            this.label_nombreusuario.Location = new System.Drawing.Point(57, 747);
+            this.label_nombreusuario.Font = new System.Drawing.Font("Century Gothic", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_nombreusuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label_nombreusuario.Location = new System.Drawing.Point(79, 618);
             this.label_nombreusuario.Name = "label_nombreusuario";
-            this.label_nombreusuario.Size = new System.Drawing.Size(35, 13);
+            this.label_nombreusuario.Size = new System.Drawing.Size(47, 17);
             this.label_nombreusuario.TabIndex = 9;
             this.label_nombreusuario.Text = "label1";
             // 
@@ -84,7 +89,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(60, 644);
+            this.pictureBox6.Location = new System.Drawing.Point(3, 632);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(123, 74);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -119,7 +124,7 @@
             this.btn_ventas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_ventas.Image = ((System.Drawing.Image)(resources.GetObject("btn_ventas.Image")));
             this.btn_ventas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ventas.Location = new System.Drawing.Point(3, 499);
+            this.btn_ventas.Location = new System.Drawing.Point(3, 503);
             this.btn_ventas.Name = "btn_ventas";
             this.btn_ventas.Size = new System.Drawing.Size(237, 34);
             this.btn_ventas.TabIndex = 5;
@@ -137,9 +142,9 @@
             this.btn_clientes.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_clientes.Image = ((System.Drawing.Image)(resources.GetObject("btn_clientes.Image")));
             this.btn_clientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_clientes.Location = new System.Drawing.Point(6, 392);
+            this.btn_clientes.Location = new System.Drawing.Point(0, 423);
             this.btn_clientes.Name = "btn_clientes";
-            this.btn_clientes.Size = new System.Drawing.Size(237, 34);
+            this.btn_clientes.Size = new System.Drawing.Size(243, 34);
             this.btn_clientes.TabIndex = 4;
             this.btn_clientes.Text = "Clientes";
             this.btn_clientes.UseVisualStyleBackColor = false;
@@ -155,7 +160,7 @@
             this.btn_usuarios.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_usuarios.Image = ((System.Drawing.Image)(resources.GetObject("btn_usuarios.Image")));
             this.btn_usuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_usuarios.Location = new System.Drawing.Point(0, 447);
+            this.btn_usuarios.Location = new System.Drawing.Point(0, 463);
             this.btn_usuarios.Name = "btn_usuarios";
             this.btn_usuarios.Size = new System.Drawing.Size(247, 34);
             this.btn_usuarios.TabIndex = 3;
@@ -173,11 +178,11 @@
             this.btn_facturas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_facturas.Image = ((System.Drawing.Image)(resources.GetObject("btn_facturas.Image")));
             this.btn_facturas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_facturas.Location = new System.Drawing.Point(6, 341);
+            this.btn_facturas.Location = new System.Drawing.Point(0, 383);
             this.btn_facturas.Name = "btn_facturas";
-            this.btn_facturas.Size = new System.Drawing.Size(244, 34);
+            this.btn_facturas.Size = new System.Drawing.Size(250, 34);
             this.btn_facturas.TabIndex = 2;
-            this.btn_facturas.Text = "Facturas";
+            this.btn_facturas.Text = "Vender articulos";
             this.btn_facturas.UseVisualStyleBackColor = false;
             this.btn_facturas.Click += new System.EventHandler(this.btn_facturas_Click);
             // 
@@ -191,7 +196,7 @@
             this.btn_stock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_stock.Image = ((System.Drawing.Image)(resources.GetObject("btn_stock.Image")));
             this.btn_stock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_stock.Location = new System.Drawing.Point(3, 291);
+            this.btn_stock.Location = new System.Drawing.Point(3, 290);
             this.btn_stock.Name = "btn_stock";
             this.btn_stock.Size = new System.Drawing.Size(241, 34);
             this.btn_stock.TabIndex = 1;
@@ -211,7 +216,7 @@
             this.btn_productos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_productos.Location = new System.Drawing.Point(3, 241);
             this.btn_productos.Name = "btn_productos";
-            this.btn_productos.Size = new System.Drawing.Size(241, 34);
+            this.btn_productos.Size = new System.Drawing.Size(247, 34);
             this.btn_productos.TabIndex = 0;
             this.btn_productos.Text = "Productos";
             this.btn_productos.UseVisualStyleBackColor = false;
@@ -220,6 +225,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.panel1.Controls.Add(this.btn_ordendecompra);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label_tipousuario);
             this.panel1.Controls.Add(this.label_nombreusuario);
@@ -237,6 +243,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 766);
             this.panel1.TabIndex = 0;
+            // 
+            // btn_ordendecompra
+            // 
+            this.btn_ordendecompra.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ordendecompra.FlatAppearance.BorderSize = 0;
+            this.btn_ordendecompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkBlue;
+            this.btn_ordendecompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ordendecompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ordendecompra.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_ordendecompra.Image = ((System.Drawing.Image)(resources.GetObject("btn_ordendecompra.Image")));
+            this.btn_ordendecompra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ordendecompra.Location = new System.Drawing.Point(0, 330);
+            this.btn_ordendecompra.Name = "btn_ordendecompra";
+            this.btn_ordendecompra.Size = new System.Drawing.Size(247, 34);
+            this.btn_ordendecompra.TabIndex = 13;
+            this.btn_ordendecompra.Text = "Orden de compra";
+            this.btn_ordendecompra.UseVisualStyleBackColor = false;
+            this.btn_ordendecompra.Click += new System.EventHandler(this.btn_ordendecompra_Click);
             // 
             // pictureBox1
             // 
@@ -398,5 +422,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox menu;
+        private System.Windows.Forms.Button btn_ordendecompra;
     }
 }

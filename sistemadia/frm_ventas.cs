@@ -21,6 +21,15 @@ namespace sistemadia
         {
             VENTASDETALLE venta = new VENTASDETALLE();
             GridVw_producto.DataSource= venta.listaven();
+            DataTable ds;
+            VENTASDETALLE vet = new VENTASDETALLE();
+            ds = vet.contarvent(dateTimePicker1.Text);
+            label2.Text = ds.Rows[0][0].ToString();
+            VENTASDETALLE vents = new VENTASDETALLE();
+            DataTable dd;
+            dd = vents.montodiario(dateTimePicker1.Text);
+            label3.Text = dd.Rows[0][0].ToString();
+
         }
 
         private void btn_buscar_Click(object sender, EventArgs e)
@@ -42,6 +51,30 @@ namespace sistemadia
 
             }
             txtcalcular.Text = "$" + totalidad.ToString("N2");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuMaterialTextbox1_OnValueChanged(object sender, EventArgs e)
+        {
+            DataTable ds;
+            VENTASDETALLE vent = new VENTASDETALLE();
+            ds = vent.buscarvendedor(dateTimePicker1.Text,dateTimePicker2.Text,buscartxt.Text);
+            GridVw_producto.DataSource = ds;
+           
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

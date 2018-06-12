@@ -97,7 +97,6 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // bunifuGradientPanel1
             // 
@@ -114,7 +113,6 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(245, 442);
             this.bunifuGradientPanel1.TabIndex = 8;
-            this.bunifuGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel1_Paint);
             // 
             // login
             // 
@@ -161,9 +159,7 @@
             this.usertxt.Size = new System.Drawing.Size(203, 45);
             this.usertxt.TabIndex = 10;
             this.usertxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.usertxt.OnValueChanged += new System.EventHandler(this.usertxt_OnValueChanged);
-            this.usertxt.MouseEnter += new System.EventHandler(this.usertxt_MouseEnter);
-            this.usertxt.MouseLeave += new System.EventHandler(this.usertxt_MouseLeave);
+            this.usertxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usertxt_KeyPress);
             // 
             // contraseñatxt
             // 
@@ -184,9 +180,7 @@
             this.contraseñatxt.Size = new System.Drawing.Size(203, 45);
             this.contraseñatxt.TabIndex = 11;
             this.contraseñatxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.contraseñatxt.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextbox2_OnValueChanged);
-            this.contraseñatxt.MouseEnter += new System.EventHandler(this.contraseñatxt_MouseEnter);
-            this.contraseñatxt.MouseLeave += new System.EventHandler(this.contraseñatxt_MouseLeave);
+            this.contraseñatxt.OnValueChanged += new System.EventHandler(this.contraseñatxt_OnValueChanged);
             // 
             // frm_login
             // 
@@ -206,6 +200,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Name = "frm_login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frm_login_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_login_KeyDown);

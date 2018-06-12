@@ -27,7 +27,12 @@ namespace cDatos
 
             
         }
-       
+        public DataTable contar()
+        {
+            string consultar = "SELECT COUNT (ID_PRODUCTO) FROM PRODUCTO";
+            DataTable RESUTALDO = conexionpro.LeerPorComando(consultar);
+            return RESUTALDO;
+        }
         public DataTable obtenerproducto()
         {
             string consulta = "SELECT COD_PRODUCTO,NOMBRE,PRECIO,TIPO,DISPONIBILIDAD FROM PRODUCTO WHERE HABILITADO=1";
@@ -42,7 +47,7 @@ namespace cDatos
         }
         public DataTable obtenerstocks()
         {
-            string consulta = "SELECT COD_PRODUCTO,NOMBRE,PRECIO,TIPO,DISPONIBILIDAD FROM PRODUCTO WHERE HABILITADO=1 AND DISPONIBILIDAD < 80";
+            string consulta = "SELECT COD_PRODUCTO,NOMBRE,PRECIO,TIPO,DISPONIBILIDAD FROM PRODUCTO WHERE HABILITADO=1 AND DISPONIBILIDAD < 150";
             DataTable resultado = conexionpro.LeerPorComando(consulta);
             return resultado;
         }

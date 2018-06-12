@@ -30,21 +30,11 @@ namespace sistemadia
 
         public static bControl.Usuario user = new bControl.Usuario();
 
-        private void button1_Click(object sender, EventArgs e)
+        void menuprincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
-
-
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            this.Show();
+            usertxt.Text = "";
+            contraseñatxt.Text = "";
         }
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
@@ -56,8 +46,9 @@ namespace sistemadia
                 if (user.ingresar(usertxt.Text.ToString(), contraseñatxt.Text.ToString()))
                 {
 
-                    frm_menuPrincipal men = new frm_menuPrincipal();
-                    men.Show();
+                    frm_menuPrincipal menuprincipal = new frm_menuPrincipal();
+                    menuprincipal.FormClosed += new FormClosedEventHandler(menuprincipal_FormClosed);
+                    menuprincipal.Show();
                     this.Hide();
                 }
                 else
@@ -71,92 +62,15 @@ namespace sistemadia
 
             }
         }
-        string useri = "";
-        string pass = "";
+        
         private void frm_login_Load(object sender, EventArgs e)
         {
             usertxt.Focus();
-            usertxt.Text = "Documento";
-            contraseñatxt.Text = "Contraseña";
-            contraseñatxt.isPassword = false;
-           
-        }
 
-        private void bunifuMaterialTextbox2_OnValueChanged(object sender, EventArgs e)
-        {
 
         }
 
-        private void usertxt_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void usertxt_MouseEnter(object sender, EventArgs e)
-        {
-            usertxt.Text = "";
-            usertxt.ForeColor = Color.Black;
-        }
-
-        private void usertxt_MouseLeave(object sender, EventArgs e)
-        {
-            useri = usertxt.Text;
-            if (useri.Equals("Documento"))
-            {
-                usertxt.Text = "Documento";
-                usertxt.ForeColor = Color.DimGray;
-
-            }
-
-            else
-            {
-                if (useri.Equals(""))
-                {
-                    usertxt.Text = "Documento";
-                    usertxt.ForeColor = Color.DimGray;
-                }
-                else
-                {
-                    usertxt.Text = useri;
-                    usertxt.ForeColor = Color.Black;
-                }
-            }
-        }
-
-        private void contraseñatxt_MouseEnter(object sender, EventArgs e)
-        {
-            contraseñatxt.Text = "";
-            contraseñatxt.ForeColor = Color.Black;
-            contraseñatxt.isPassword = true;
-        }
-
-        private void contraseñatxt_MouseLeave(object sender, EventArgs e)
-        {
-            pass = contraseñatxt.Text;
-            if (pass.Equals("Contraseña"))
-            {
-                contraseñatxt.Text = "Contraseña";
-                contraseñatxt.ForeColor = Color.DimGray;
-
-            }
-
-            else
-            {
-                if (pass.Equals(""))
-                {
-                    contraseñatxt.isPassword = false;
-                    contraseñatxt.Text = "Contraseña";
-                    contraseñatxt.ForeColor = Color.DimGray;
-                }
-                else
-                {
-                    contraseñatxt.isPassword = true;
-                    contraseñatxt.Text = pass;
-                    contraseñatxt.ForeColor = Color.Black;
-                }
-            }
-        }
-
+        
         private void bunifuThinButton21_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -168,8 +82,9 @@ namespace sistemadia
                     if (user.ingresar(usertxt.Text.ToString(), contraseñatxt.Text.ToString()))
                     {
 
-                        frm_menuPrincipal men = new frm_menuPrincipal();
-                        men.Show();
+                        frm_menuPrincipal menuprincipal = new frm_menuPrincipal();
+                        menuprincipal.FormClosed += new FormClosedEventHandler(menuprincipal_FormClosed);
+                        menuprincipal.Show();
                         this.Hide();
                     }
                     else
@@ -197,8 +112,9 @@ namespace sistemadia
                     if (user.ingresar(usertxt.Text.ToString(), contraseñatxt.Text.ToString()))
                     {
 
-                        frm_menuPrincipal men = new frm_menuPrincipal();
-                        men.Show();
+                        frm_menuPrincipal menuprincipal = new frm_menuPrincipal();
+                        menuprincipal.FormClosed += new FormClosedEventHandler(menuprincipal_FormClosed);
+                        menuprincipal.Show();
                         this.Hide();
                     }
                     else
@@ -212,6 +128,16 @@ namespace sistemadia
 
                 }
             }
+        }
+
+        private void contraseñatxt_OnValueChanged(object sender, EventArgs e)
+        {
+            contraseñatxt.isPassword = true;
+        }
+
+        private void usertxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumero(e);
         }
     }
 }

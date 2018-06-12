@@ -101,6 +101,42 @@ namespace bControl
 
         }
 
+        public bool modificanuevousuario12(string username, string password, string nombre, string apellido, string permiso)
+        {
+
+            if (!string.IsNullOrEmpty(username) & !string.IsNullOrEmpty(password) & !string.IsNullOrEmpty(nombre) & !string.IsNullOrEmpty(apellido) & !string.IsNullOrEmpty(permiso))
+            {
+                if (conexionusuario.comprobarusuarioexistente(username))
+                {
+                    string passwordsinhashear = password;
+                    var bytes = new byte[16];
+                    using (var rng = new RNGCryptoServiceProvider())
+                    {
+                        rng.GetBytes(bytes);
+                    }
+                    string randomSalt = BitConverter.ToString(bytes).Replace("-", "").ToLower();
+                    var md5 = new MD5CryptoServiceProvider();
+                    var md5data = md5.ComputeHash(Encoding.ASCII.GetBytes(passwordsinhashear + randomSalt));
+                    string passwordhasheada = BitConverter.ToString(md5data).Replace("-", "").ToLower();
+                   
+
+                    string passwordhasheadayconsalt = randomSalt + "," + passwordhasheada;
+                    conexionusuario.modificarnuevousuario(username, passwordhasheadayconsalt, permiso, nombre, apellido);
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
         #endregion
     }
 }

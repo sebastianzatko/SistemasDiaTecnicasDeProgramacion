@@ -93,7 +93,7 @@
             this.GridVw_producto.Location = new System.Drawing.Point(47, 116);
             this.GridVw_producto.Name = "GridVw_producto";
             this.GridVw_producto.RowHeadersVisible = false;
-            this.GridVw_producto.Size = new System.Drawing.Size(616, 409);
+            this.GridVw_producto.Size = new System.Drawing.Size(616, 453);
             this.GridVw_producto.TabIndex = 3;
             this.GridVw_producto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridVw_producto_CellContentClick);
             this.GridVw_producto.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GridVw_producto_CellFormatting);
@@ -323,7 +323,7 @@
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(166, 32);
             this.Guardar.TabIndex = 8;
-            this.Guardar.Text = "Actualizar";
+            this.Guardar.Text = "Actualiza[Enter]";
             this.Guardar.UseVisualStyleBackColor = false;
             this.Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
@@ -337,11 +337,11 @@
             this.btn_selecionar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_selecionar.Image = ((System.Drawing.Image)(resources.GetObject("btn_selecionar.Image")));
             this.btn_selecionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_selecionar.Location = new System.Drawing.Point(68, 553);
+            this.btn_selecionar.Location = new System.Drawing.Point(64, 599);
             this.btn_selecionar.Name = "btn_selecionar";
             this.btn_selecionar.Size = new System.Drawing.Size(226, 32);
             this.btn_selecionar.TabIndex = 7;
-            this.btn_selecionar.Text = "Selecionar";
+            this.btn_selecionar.Text = "Selecionar [F9]";
             this.btn_selecionar.UseVisualStyleBackColor = false;
             this.btn_selecionar.Click += new System.EventHandler(this.btn_selecionar_Click);
             // 
@@ -355,7 +355,7 @@
             this.bnt_stock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.bnt_stock.Image = ((System.Drawing.Image)(resources.GetObject("bnt_stock.Image")));
             this.bnt_stock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bnt_stock.Location = new System.Drawing.Point(372, 553);
+            this.bnt_stock.Location = new System.Drawing.Point(373, 599);
             this.bnt_stock.Name = "bnt_stock";
             this.bnt_stock.Size = new System.Drawing.Size(226, 32);
             this.bnt_stock.TabIndex = 8;

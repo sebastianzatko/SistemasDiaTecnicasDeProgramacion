@@ -26,7 +26,12 @@ namespace sistemadia
             ds = nombre.productolist();
             GridVw_producto.DataSource = ds;
             codigo_productotxt.Focus();
-           
+            DataTable DD;
+            Listaprod cont = new Listaprod();
+            DD = cont.CONTAR();
+            label2.Text = DD.Rows[0][0].ToString();
+
+
 
         }
 
@@ -62,7 +67,10 @@ namespace sistemadia
                 bControl.Listaprod pro = new bControl.Listaprod();
 
                 pro.Agregar(nombreproductotxt.Text, disponibilidadtxt.Text, preciotxt.Text, tipotxt.Text, codigo_productotxt.Text);
-
+                DataTable DD;
+                Listaprod cont = new Listaprod();
+                DD = cont.CONTAR();
+                label2.Text = DD.Rows[0][0].ToString();
 
                 MessageBox.Show("Se ha creado un nuevo producto");
                 DataTable ds;
@@ -81,26 +89,8 @@ namespace sistemadia
 
         private void GridVw_producto_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (this.GridVw_producto.Columns[e.ColumnIndex].Name == "DISPONIBILIDAD")
-            {
-                if (Convert.ToInt32(e.Value) <= 400)
-                {
-                    e.CellStyle.ForeColor = Color.Black;
-                    e.CellStyle.BackColor = Color.Green;
-                    if (Convert.ToInt32(e.Value) <= 100)
-                    {
-                        e.CellStyle.ForeColor = Color.Black;
-                        e.CellStyle.BackColor = Color.Yellow;
-                        if (Convert.ToInt32(e.Value) <= 50)
-                        {
-                            e.CellStyle.ForeColor = Color.Black;
-                            e.CellStyle.BackColor = Color.Red;
-
-                        }
-
-                    }
-                }
-            }
+           
+            
         }
 
         private void disponibilidadtxt_KeyPress(object sender, KeyPressEventArgs e)
@@ -116,6 +106,16 @@ namespace sistemadia
         private void preciotxt_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.solonumeroycomas(e);
+        }
+
+        private void lbl_Nuevo_Producto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

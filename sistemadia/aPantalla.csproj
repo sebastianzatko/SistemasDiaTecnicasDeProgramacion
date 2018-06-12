@@ -70,11 +70,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Facturas.cs">
+    <Compile Include="frm_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Facturas.Designer.cs">
-      <DependentUpon>Facturas.cs</DependentUpon>
+    <Compile Include="frm_Clientes.designer.cs">
+      <DependentUpon>frm_Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_facturasventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_facturasventas.Designer.cs">
+      <DependentUpon>frm_facturasventas.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_empleados.cs">
       <SubType>Form</SubType>
@@ -94,6 +100,12 @@
     <Compile Include="frm_menuPrincipal.Designer.cs">
       <DependentUpon>frm_menuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_orden_compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_orden_compra.Designer.cs">
+      <DependentUpon>Frm_orden_compra.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Producto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,7 +115,7 @@
     <Compile Include="frm_Proveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_Proveedores.Designer.cs">
+    <Compile Include="frm_Proveedores.designer.cs">
       <DependentUpon>frm_Proveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_stock.cs">
@@ -127,8 +139,11 @@
       <DependentUpon>reporte_factura.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="Facturas.resx">
-      <DependentUpon>Facturas.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Clientes.resx">
+      <DependentUpon>frm_Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_facturasventas.resx">
+      <DependentUpon>frm_facturasventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_empleados.resx">
       <DependentUpon>frm_empleados.cs</DependentUpon>
@@ -138,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_menuPrincipal.resx">
       <DependentUpon>frm_menuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_orden_compra.resx">
+      <DependentUpon>Frm_orden_compra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Producto.resx">
       <DependentUpon>frm_Producto.cs</DependentUpon>
@@ -181,6 +199,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Conexion2\cDatos.csproj">
+      <Project>{98D6D364-E3EB-4562-BF60-3282C6B4A4CF}</Project>
+      <Name>cDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Control\bControl.csproj">
       <Project>{6260b2c8-b97d-4901-8acf-1d1f347d8702}</Project>
       <Name>bControl</Name>

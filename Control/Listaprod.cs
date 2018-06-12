@@ -45,7 +45,12 @@ namespace bControl
                 
                
         }
+        public DataTable CONTAR()
+        {
+            DataTable tablaproducto = conexion.contar();
+            return tablaproducto;
 
+        }
         public void actualizar(string nombre, string disponiblidad, string precio, string tipo, string cod_pro)
         {
 
