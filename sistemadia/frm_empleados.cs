@@ -34,36 +34,60 @@ namespace sistemadia
             GridVw_usuariosregistrados.DataSource = ds;
             txtbox_newuserdni.Focus();
             txtbox_newuserpassword.isPassword = true;
+            GridVw_usuariosregistrados.Columns[2].Visible = false;
         }
 
-        
-
-        private void Guardar_Click(object sender, EventArgs e)
+        public string dnio;
+         private bool comprobarvacio(string nombre, string apellido, string email, string tipo)
         {
-            string dni;
-            string contra;
-            string nombre;
-            string apellido;
-            dni = txtbox_newuserdni.Text;
-            contra = txtbox_newuserpassword.Text;
-            nombre = txtbox_newusernombre.Text;
-            apellido = txtbox_newuserapellido.Text;
-            if (dni == "" && contra == "" && nombre == "" && apellido == "")
+            if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(apellido) && !string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(tipo))
             {
-                MessageBox.Show("ERROR  TEXTOS VACIOS", "ERROR!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
             }
             else
             {
-
-                Usuario ur = new Usuario();
-                ur.crearnuevousuario(txtbox_newuserdni.Text, txtbox_newuserpassword.Text, txtbox_newusernombre.Text, txtbox_newuserapellido.Text, comboBox1.Text);
-                MessageBox.Show("se creo un nuevo usuario");
-                DataTable ds;
-                Usuario user = frm_menuPrincipal.user;
-                ds = user.listarusuarios();
-                GridVw_usuariosregistrados.DataSource = ds;
-                //No se como refrescar el gridview sin que sea medio tosco :(
+                return false;
             }
+        }
+        private void Guardar_Click(object sender, EventArgs e)
+        {
+            Usuario ur = new Usuario();
+
+          
+            
+
+          if (comprobarvacio(txtbox_newuserdni.Text.ToString(), txtbox_newuserpassword.Text.ToString(), txtbox_newusernombre.Text.ToString(), txtbox_newuserapellido.Text.ToString()))
+            {
+                if (ur.crearnuevousuario(txtbox_newuserdni.Text, txtbox_newuserpassword.Text, txtbox_newusernombre.Text, txtbox_newuserapellido.Text, comboBox1.Text))
+                {
+
+
+                    MessageBox.Show("se creo un nuevo usuario");
+                    DataTable ds;
+                    Usuario user = frm_menuPrincipal.user;
+                    ds = user.listarusuarios();
+                    GridVw_usuariosregistrados.DataSource = ds;
+                }
+                else
+                {
+                    MessageBox.Show("No se puede crear el usuario, DNI no valido");
+                }
+
+
+            }
+
+        
+
+            else
+            {
+
+                MessageBox.Show("ERROR  TEXTOS VACIOS", "ERROR!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+               
+                
+          
+          
         }
 
         private void txtbox_newuserdni_KeyPress(object sender, KeyPressEventArgs e)
@@ -91,6 +115,42 @@ namespace sistemadia
         {
             comboBox1.ForeColor = Color.Blue;
            
+        }
+
+        private void btn_selecionar_Click(object sender, EventArgs e)
+        {
+            if (GridVw_usuariosregistrados.SelectedCells.Count > 0)
+            {
+
+                txtbox_newuserdni.Text = GridVw_usuariosregistrados.CurrentRow.Cells[1].Value.ToString();
+                txtbox_newusernombre.Text = GridVw_usuariosregistrados.CurrentRow.Cells[4].Value.ToString();
+               txtbox_newuserapellido.Text = GridVw_usuariosregistrados.CurrentRow.Cells[5].Value.ToString();
+               txtbox_newuserpassword.Text = GridVw_usuariosregistrados.CurrentRow.Cells[2].Value.ToString();
+                comboBox1.Text = GridVw_usuariosregistrados.CurrentRow.Cells[3].Value.ToString();
+            }
+        }
+
+        private void btn_modificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Usuario urs = new Usuario();
+                urs.modificanuevousuario12(txtbox_newuserdni.Text, txtbox_newuserpassword.Text, comboBox1.Text, txtbox_newusernombre.Text, txtbox_newuserapellido.Text);
+
+                DataTable dd;
+                Usuario useri = new Usuario();
+                dd = useri.listarusuarios();
+                GridVw_usuariosregistrados.DataSource = dd;
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show("no se pudo modificar" + error);
+            }
+        }
+
+        private void txtbox_newuserdni_OnValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,7 +10,7 @@ namespace bControl
 {
 
     // TOMY 01-06-2018=ESTO HAY QUE PASARLO A UNA CLASE DE BUSCADOR (BUENA SUGERENCIA)
-
+    // la cagada de esto es que tenemos que cambiar los sqlconnection despues
     public class autocompletar
     {
         
@@ -18,12 +18,13 @@ namespace bControl
         SqlDataReader cnr;
 
 
-        SqlConnection cmm = new SqlConnection("Data Source=TCL;Initial Catalog=sistemadia;Integrated Security=True");
-          
+        SqlConnection cmm = new SqlConnection("Data Source=DESKTOP-3FQKM1M\\SQLEXPRESS;Initial Catalog=sistemadiatomas;Integrated Security=True");
 
 
 
-        
+
+
+
         public void AutoCompletar(TextBox cajaTexto)
         {
             try

@@ -44,12 +44,14 @@
             this.lbl_nombre = new System.Windows.Forms.Label();
             this.lbl_apellido = new System.Windows.Forms.Label();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.btn_modificar = new System.Windows.Forms.Button();
             this.txtbox_newuserapellido = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtbox_newusernombre = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtbox_newuserpassword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtbox_newuserdni = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_selecionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridVw_usuariosregistrados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -194,6 +196,7 @@
             this.bunifuCards1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(124)))));
+            this.bunifuCards1.Controls.Add(this.btn_modificar);
             this.bunifuCards1.Controls.Add(this.comboBox1);
             this.bunifuCards1.Controls.Add(this.txtbox_newuserapellido);
             this.bunifuCards1.Controls.Add(this.txtbox_newusernombre);
@@ -211,8 +214,26 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(372, 468);
+            this.bunifuCards1.Size = new System.Drawing.Size(372, 497);
             this.bunifuCards1.TabIndex = 20;
+            // 
+            // btn_modificar
+            // 
+            this.btn_modificar.BackColor = System.Drawing.Color.Green;
+            this.btn_modificar.FlatAppearance.BorderSize = 0;
+            this.btn_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_modificar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_modificar.Image = ((System.Drawing.Image)(resources.GetObject("btn_modificar.Image")));
+            this.btn_modificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_modificar.Location = new System.Drawing.Point(121, 446);
+            this.btn_modificar.Name = "btn_modificar";
+            this.btn_modificar.Size = new System.Drawing.Size(156, 32);
+            this.btn_modificar.TabIndex = 25;
+            this.btn_modificar.Text = "Modificar";
+            this.btn_modificar.UseVisualStyleBackColor = false;
+            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
             // 
             // txtbox_newuserapellido
             // 
@@ -292,6 +313,7 @@
             this.txtbox_newuserdni.Size = new System.Drawing.Size(148, 37);
             this.txtbox_newuserdni.TabIndex = 21;
             this.txtbox_newuserdni.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtbox_newuserdni.OnValueChanged += new System.EventHandler(this.txtbox_newuserdni_OnValueChanged);
             this.txtbox_newuserdni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_newuserdni_KeyPress);
             // 
             // bunifuCustomLabel1
@@ -315,6 +337,24 @@
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
             // 
+            // btn_selecionar
+            // 
+            this.btn_selecionar.BackColor = System.Drawing.Color.Green;
+            this.btn_selecionar.FlatAppearance.BorderSize = 0;
+            this.btn_selecionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btn_selecionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_selecionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_selecionar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_selecionar.Image = ((System.Drawing.Image)(resources.GetObject("btn_selecionar.Image")));
+            this.btn_selecionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_selecionar.Location = new System.Drawing.Point(189, 572);
+            this.btn_selecionar.Name = "btn_selecionar";
+            this.btn_selecionar.Size = new System.Drawing.Size(175, 32);
+            this.btn_selecionar.TabIndex = 23;
+            this.btn_selecionar.Text = "Selecionar";
+            this.btn_selecionar.UseVisualStyleBackColor = false;
+            this.btn_selecionar.Click += new System.EventHandler(this.btn_selecionar_Click);
+            // 
             // frm_empleados
             // 
             this.AcceptButton = this.Guardar;
@@ -322,6 +362,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1050, 680);
+            this.Controls.Add(this.btn_selecionar);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.bunifuCustomLabel1);
             this.Controls.Add(this.bunifuCards1);
@@ -361,5 +402,7 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtbox_newuserapellido;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btn_selecionar;
+        private System.Windows.Forms.Button btn_modificar;
     }
 }

@@ -16,18 +16,27 @@ namespace sistemadia
         {
             InitializeComponent();
         }
-
+        VentasDetalle venta = new VentasDetalle();
         private void frm_ventas_Load(object sender, EventArgs e)
         {
-            VENTASDETALLE venta = new VENTASDETALLE();
+            
             GridVw_producto.DataSource= venta.listaven();
+            DataTable ds;
+            
+            ds = venta.contarvent(dateTimePicker1.Text);
+            label2.Text = ds.Rows[0][0].ToString();
+            
+            DataTable dd;
+            dd = venta.montodiario(dateTimePicker1.Text);
+            label3.Text = dd.Rows[0][0].ToString();
+
         }
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
             DataTable ds;
-            VENTASDETALLE nombre = new VENTASDETALLE();
-            ds = nombre.buscarventas(dateTimePicker1.Text,dateTimePicker2.Text);
+           
+            ds = venta.buscarventas(dateTimePicker1.Text,dateTimePicker2.Text);
             GridVw_producto.DataSource = ds;
         }
         decimal totalidad;
@@ -43,5 +52,18 @@ namespace sistemadia
             }
             txtcalcular.Text = "$" + totalidad.ToString("N2");
         }
+
+        
+
+        private void bunifuMaterialTextbox1_OnValueChanged(object sender, EventArgs e)
+        {
+            DataTable ds;
+            
+            ds = venta.buscarvendedor(dateTimePicker1.Text,dateTimePicker2.Text,buscartxt.Text);
+            GridVw_producto.DataSource = ds;
+           
+        }
+
+        
     }
 }

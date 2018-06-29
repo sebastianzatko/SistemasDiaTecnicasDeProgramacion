@@ -91,13 +91,12 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(26, 69);
+            this.pictureBox4.Location = new System.Drawing.Point(12, 70);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(192, 172);
+            this.pictureBox4.Size = new System.Drawing.Size(216, 190);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
-            
             // 
             // bunifuGradientPanel1
             // 
@@ -114,7 +113,6 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(245, 442);
             this.bunifuGradientPanel1.TabIndex = 8;
-            
             // 
             // login
             // 
@@ -161,8 +159,7 @@
             this.usertxt.Size = new System.Drawing.Size(203, 45);
             this.usertxt.TabIndex = 10;
             this.usertxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            
-            
+            this.usertxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usertxt_KeyPress);
             // 
             // contraseñatxt
             // 
@@ -183,8 +180,7 @@
             this.contraseñatxt.Size = new System.Drawing.Size(203, 45);
             this.contraseñatxt.TabIndex = 11;
             this.contraseñatxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            
-           
+            this.contraseñatxt.OnValueChanged += new System.EventHandler(this.contraseñatxt_OnValueChanged);
             // 
             // frm_login
             // 
@@ -204,6 +200,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Name = "frm_login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.frm_login_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frm_login_KeyDown);

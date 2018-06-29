@@ -13,7 +13,7 @@ namespace cDatos
     public class Conexion
     {
         private SqlConnection objConexion;
-        private string strCadenaDeConexion = "";
+        private string strCadenaDeConexion = "Data Source=DESKTOP-3FQKM1M\\SQLEXPRESS;Initial Catalog=sistemadiatomas;Integrated Security=True";
 
 
         /* -------------------- private void Conectar() ------------ 
@@ -23,7 +23,7 @@ namespace cDatos
          */
         private void Conectar()
         {
-            strCadenaDeConexion = "Data Source=TCL;Initial Catalog=sistemadia;Integrated Security=True";
+            strCadenaDeConexion = "Data Source=DESKTOP-3FQKM1M\\SQLEXPRESS;Initial Catalog=sistemadiatomas;Integrated Security=True";
 
             //Instanció un objeto del tipo SqlConnection
             objConexion = new SqlConnection();
@@ -216,6 +216,18 @@ namespace cDatos
 
 
             return filasAfectadas;
+        }
+
+        //agregado por tomy
+        public DataTable intentarobtener(string comando)
+        {
+            this.Conectar();
+            SqlCommand coman = new SqlCommand(comando, objConexion);
+            SqlDataReader leer = coman.ExecuteReader();
+            DataTable nuevatabla = new DataTable();
+            nuevatabla.Load(leer);
+            this.Desconectar();
+            return nuevatabla;
         }
 
         #region Parametros

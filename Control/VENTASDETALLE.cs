@@ -8,9 +8,9 @@ using System.Data;
 
 namespace bControl
 {
-   public class VENTASDETALLE
+   public class VentasDetalle
     {
-        cDatos.Ventaspro conxeventas = new cDatos.Ventaspro();
+        cDatos.DALVentas conxeventas = new cDatos.DALVentas();
         private int int_ventas;
         public int Int_ventas
         {
@@ -35,8 +35,24 @@ namespace bControl
 
 
         }
+        public DataTable contarvent(string VENT)
+        {
+            DataTable tablaventa = conxeventas.contarventas(VENT);
+            return tablaventa;
 
-       
+        }
+        public DataTable montodiario(string VENT)
+        {
+            DataTable tablaventa = conxeventas.SUMAMONTODIARIO(VENT);
+            return tablaventa;
+
+        }
+        public DataTable ventamax()
+        {
+            DataTable tablaproducto = conxeventas.obtenerID();
+            return tablaproducto;
+
+        }
         public DataTable listaven()
         {
             DataTable tablaven = conxeventas.listaventas();
@@ -45,6 +61,12 @@ namespace bControl
         public DataTable buscarventas(string textb,string boxt)
         {
             DataTable tablaproducto = conxeventas.BUSCAR(textb,boxt);
+            return tablaproducto;
+
+        }
+        public DataTable buscarvendedor(string textb,string buscar, string boxt)
+        {
+            DataTable tablaproducto = conxeventas.BUSCARvendedor(textb,buscar ,boxt);
             return tablaproducto;
 
         }

@@ -18,6 +18,12 @@ namespace cDatos
             DataTable clientes = conexion.LeerPorComando(consulta);
             return clientes;
         }
+        public DataTable contar()
+        {
+            string consultar = "SELECT COUNT (ID_CLIENTE) FROM CLIENTE WHERE HABILITADO=1";
+            DataTable RESUTALDO = conexion.LeerPorComando(consultar);
+            return RESUTALDO;
+        }
         public void guardar_Cliente(string nombre,string apellido,string email,string tipo)
         {
             SqlParameter[] parametros = new SqlParameter[4];

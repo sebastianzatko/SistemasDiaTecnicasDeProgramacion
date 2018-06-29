@@ -33,9 +33,8 @@ namespace sistemadia
         void menuprincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Show();
-            usertxt.Text = " ";
-            contraseñatxt.Text = " ";
-
+            usertxt.Text = "";
+            contraseñatxt.Text = "";
         }
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
@@ -66,8 +65,9 @@ namespace sistemadia
         
         private void frm_login_Load(object sender, EventArgs e)
         {
-            
-           
+            usertxt.Focus();
+
+
         }
 
         
@@ -128,6 +128,16 @@ namespace sistemadia
 
                 }
             }
+        }
+
+        private void contraseñatxt_OnValueChanged(object sender, EventArgs e)
+        {
+            contraseñatxt.isPassword = true;
+        }
+
+        private void usertxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumero(e);
         }
     }
 }

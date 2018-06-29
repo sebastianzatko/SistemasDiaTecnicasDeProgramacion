@@ -19,11 +19,8 @@ namespace sistemadia
             InitializeComponent();
         }
         public static Usuario user = frm_login.user;
-        public static VENTASDETALLE vent = new VENTASDETALLE();
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        public static VentasDetalle venta = new VentasDetalle();
+        
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -34,14 +31,18 @@ namespace sistemadia
         {
 
         }
-
+        public string factu;
+        public string vendedor;
         private void Facturas_Load(object sender, EventArgs e)
         {
-            txtnombre.Text = Convert.ToString(user.Int_iduser);
+            vendedor = Convert.ToString(user.Int_iduser);
             DataTable ds;
-            VENTASDETALLE vet = new VENTASDETALLE();
            
 
+            
+            ds = venta.ventamax();
+
+            factu = ds.Rows[0][0].ToString();
 
 
 
@@ -53,16 +54,16 @@ namespace sistemadia
         public static int cont_fila = 0;
         private void colocar_Click(object sender, EventArgs e)
         {
-            string codigo;
+          
             string nombre;
             string cantidad;
             string precio;
 
-            codigo = codigoprotxt.Text;
+          
             nombre = productotxt.Text;
             cantidad = cantidadtxt.Text;
             precio = preciotxt.Text;
-            if (codigo == "" && cantidad == "" && nombre == "" && precio == "")
+            if ((nombre == ""|| string.IsNullOrEmpty(nombre) ) || (cantidad == "" || string.IsNullOrEmpty(cantidad)) || (precio == "" || string.IsNullOrEmpty(precio)))
             {
                 MessageBox.Show("error llenar todas la cajas de texto", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -75,7 +76,7 @@ namespace sistemadia
                 if (cont_fila == 0)
                 {
 
-                    dataGridView1.Rows.Add(codigoprotxt.Text, productotxt.Text, cantidadtxt.Text, preciotxt.Text);
+                    dataGridView1.Rows.Add(codigo, productotxt.Text, cantidadtxt.Text, preciotxt.Text);
                     decimal importe = Convert.ToDecimal(dataGridView1.Rows[cont_fila].Cells[2].Value) * Convert.ToDecimal(dataGridView1.Rows[cont_fila].Cells[3].Value);
                     dataGridView1.Rows[cont_fila].Cells[4].Value = importe;
 
@@ -99,7 +100,7 @@ namespace sistemadia
                     }
                     else
                     {
-                        dataGridView1.Rows.Add(codigoprotxt.Text, productotxt.Text, cantidadtxt.Text, preciotxt.Text);
+                        dataGridView1.Rows.Add(codigo, productotxt.Text, cantidadtxt.Text, preciotxt.Text);
                         decimal importe = Convert.ToDecimal(dataGridView1.Rows[cont_fila].Cells[2].Value) * Convert.ToDecimal(dataGridView1.Rows[cont_fila].Cells[3].Value);
                         dataGridView1.Rows[cont_fila].Cells[4].Value = importe;
 
@@ -115,11 +116,11 @@ namespace sistemadia
 
                 }
             }
-            cantidadtxt.Text = "";
-            productotxt.Text = "";
-            cantidadtxt.Text = "";
-            preciotxt.Text = "";
-            clientetxt.Text = "";
+            cantidadtxt.Text = string.Empty;
+            productotxt.Text = string.Empty;
+            cantidadtxt.Text = string.Empty;
+            preciotxt.Text = string.Empty;
+          
             productotxt.Focus();
 
 
@@ -128,25 +129,7 @@ namespace sistemadia
         SqlConnection cmm = new SqlConnection("Data Source=TCL;Initial Catalog=sistemadia;Integrated Security=True");
         private void productotxt_TextChanged(object sender, EventArgs e)
         {
-            string sql = "select ID_PRODUCTO,PRECIO FROM PRODUCTO WHERE HABILITADO = 1 AND NOMBRE='" + productotxt.Text + " '";
-            SqlCommand coman = new SqlCommand(sql, cmm);
-
-            cmm.Open();
-            SqlDataReader leer = coman.ExecuteReader();
-            if (leer.Read() == true)
-            {
-                codigoprotxt.Text = leer["ID_PRODUCTO"].ToString();
-                preciotxt.Text = leer["PRECIO"].ToString();
-
-            }
-            else
-            {
-                codigoprotxt.Text = "";
-                preciotxt.Text = "";
-                productotxt.Focus();
-            }
-
-            cmm.Close();
+          
         }
 
         private void eliminar_Click(object sender, EventArgs e)
@@ -169,10 +152,29 @@ namespace sistemadia
         {
 
         }
+        public void completar()
+        {
+            string sql = "select ID_CLIENTE FROM CLIENTE WHERE HABILITADO = 1 AND NOMBRE='" + completa + " '";
+            SqlCommand coman = new SqlCommand(sql, cmm);
 
+            cmm.Open();
+            SqlDataReader leer = coman.ExecuteReader();
+            if (leer.Read() == true)
+            {
+                codigocliente = leer["ID_CLIENTE"].ToString();
+
+
+            }
+        }
+        public string codigocliente;
+        public string completa ="comsumidor final";
         private void clientetxt_TextChanged(object sender, EventArgs e)
         {
+            
+           
+           
 
+           
         }
 
         private void Facturas_KeyDown(object sender, KeyEventArgs e)
@@ -194,6 +196,16 @@ namespace sistemadia
             }
             if(e.KeyCode == Keys.End)
             {
+                completar();
+                venta.Agregarventa(vendedor,codigocliente, fechatxt.Text);
+                DataTable ds;
+                ds = venta.ventamax();
+                factu = ds.Rows[0][0].ToString();
+                foreach (DataGridViewRow fila in dataGridView1.Rows)
+                {
+
+                    venta.ventapro(factu, Convert.ToString(fila.Cells[0].Value), Convert.ToString(fila.Cells[2].Value));
+                }
                 reporte_factura fer = new reporte_factura();
 
 
@@ -212,14 +224,21 @@ namespace sistemadia
             }
         }
 
-        private void bunifuCards1_Paint(object sender, PaintEventArgs e)
-        {
+        
 
-        }
 
         private void btn_vender_Click(object sender, EventArgs e)
         {
-          
+            completar();
+            venta.Agregarventa(vendedor, codigocliente, fechatxt.Text);
+            DataTable ds;
+            ds = venta.ventamax();
+            factu = ds.Rows[0][0].ToString();
+            foreach (DataGridViewRow fila in dataGridView1.Rows)
+            {
+
+                venta.ventapro(factu, Convert.ToString(fila.Cells[0].Value), Convert.ToString(fila.Cells[2].Value));
+            }
             reporte_factura fer = new reporte_factura();
 
 
@@ -242,17 +261,35 @@ namespace sistemadia
             productotxt.Focus();
         }
 
-        private void label2_ventas_Click(object sender, EventArgs e)
-        {
-           
-           
+        
+        public static string codigo;
 
+        bControl.Buscador buscador = new Buscador();
+
+        private void productotxt_TextChanged_1(object sender, EventArgs e)
+        {
+            
+            DataTable leer = buscador.buscarproducto(productotxt.Text.ToString());
+            if (leer.Rows.Count > 0)
+            {
+                codigo = leer.Rows[0]["ID_PRODUCTO"].ToString();
+                preciotxt.Text = leer.Rows[0]["PRECIO"].ToString();
+
+            }
+            else
+            {
+                codigoprotxt.Text = string.Empty;
+                preciotxt.Text = string.Empty;
+                productotxt.Focus();
+            }
+
+            
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-           
-
+            frm_Clientes emple = new frm_Clientes();
+            emple.Show();
         }
     }
 }

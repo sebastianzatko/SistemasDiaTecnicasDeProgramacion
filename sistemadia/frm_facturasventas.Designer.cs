@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_facturasventas));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CODIGO_PROD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,13 +40,9 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoprotxt = new System.Windows.Forms.TextBox();
-            this.productotxt = new System.Windows.Forms.TextBox();
-            this.cantidadtxt = new System.Windows.Forms.TextBox();
             this.preciotxt = new System.Windows.Forms.TextBox();
-            this.fechatxt = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.txtnombre = new System.Windows.Forms.Label();
-            this.clientetxt = new System.Windows.Forms.TextBox();
             this.colocar = new System.Windows.Forms.Button();
             this.btn_vender = new System.Windows.Forms.Button();
             this.eliminar = new System.Windows.Forms.Button();
@@ -56,6 +52,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.productotxt = new System.Windows.Forms.TextBox();
+            this.cantidadtxt = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.fechatxt = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.bunifuCards1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,14 +70,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeight = 25;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -85,22 +86,21 @@
             this.Column3,
             this.Column4,
             this.Column8});
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.LightGray;
-            this.dataGridView1.Location = new System.Drawing.Point(46, 197);
+            this.dataGridView1.Location = new System.Drawing.Point(26, 221);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(615, 322);
+            this.dataGridView1.Size = new System.Drawing.Size(635, 322);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // CODIGO_PROD
             // 
@@ -124,51 +124,27 @@
             // 
             // Column8
             // 
-            dataGridViewCellStyle20.Format = "N2";
-            dataGridViewCellStyle20.NullValue = null;
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column8.HeaderText = "IMPORTE";
             this.Column8.Name = "Column8";
             // 
             // codigoprotxt
             // 
-            this.codigoprotxt.Location = new System.Drawing.Point(46, 171);
+            this.codigoprotxt.Location = new System.Drawing.Point(26, 195);
             this.codigoprotxt.Name = "codigoprotxt";
             this.codigoprotxt.Size = new System.Drawing.Size(87, 20);
             this.codigoprotxt.TabIndex = 1;
-            // 
-            // productotxt
-            // 
-            this.productotxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.productotxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.productotxt.Location = new System.Drawing.Point(168, 171);
-            this.productotxt.Name = "productotxt";
-            this.productotxt.Size = new System.Drawing.Size(81, 20);
-            this.productotxt.TabIndex = 2;
-            this.productotxt.TextChanged += new System.EventHandler(this.productotxt_TextChanged);
-            // 
-            // cantidadtxt
-            // 
-            this.cantidadtxt.Location = new System.Drawing.Point(284, 171);
-            this.cantidadtxt.Name = "cantidadtxt";
-            this.cantidadtxt.Size = new System.Drawing.Size(81, 20);
-            this.cantidadtxt.TabIndex = 3;
+            this.codigoprotxt.Visible = false;
             // 
             // preciotxt
             // 
-            this.preciotxt.Location = new System.Drawing.Point(395, 171);
+            this.preciotxt.Location = new System.Drawing.Point(402, 195);
             this.preciotxt.Name = "preciotxt";
             this.preciotxt.Size = new System.Drawing.Size(78, 20);
             this.preciotxt.TabIndex = 4;
-            // 
-            // fechatxt
-            // 
-            this.fechatxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechatxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(122)))), ((int)(((byte)(126)))));
-            this.fechatxt.Location = new System.Drawing.Point(696, 52);
-            this.fechatxt.Name = "fechatxt";
-            this.fechatxt.Size = new System.Drawing.Size(118, 23);
-            this.fechatxt.TabIndex = 5;
+            this.preciotxt.Visible = false;
             // 
             // timer1
             // 
@@ -179,21 +155,13 @@
             // 
             this.txtnombre.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtnombre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtnombre.Location = new System.Drawing.Point(17, 85);
+            this.txtnombre.Location = new System.Drawing.Point(23, 99);
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(100, 23);
             this.txtnombre.TabIndex = 6;
             this.txtnombre.Text = "label1";
             this.txtnombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.txtnombre.Visible = false;
-            // 
-            // clientetxt
-            // 
-            this.clientetxt.Location = new System.Drawing.Point(20, 43);
-            this.clientetxt.Name = "clientetxt";
-            this.clientetxt.Size = new System.Drawing.Size(92, 20);
-            this.clientetxt.TabIndex = 7;
-            this.clientetxt.TextChanged += new System.EventHandler(this.clientetxt_TextChanged);
             // 
             // colocar
             // 
@@ -223,7 +191,7 @@
             this.btn_vender.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_vender.Image = ((System.Drawing.Image)(resources.GetObject("btn_vender.Image")));
             this.btn_vender.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_vender.Location = new System.Drawing.Point(102, 312);
+            this.btn_vender.Location = new System.Drawing.Point(102, 323);
             this.btn_vender.Name = "btn_vender";
             this.btn_vender.Size = new System.Drawing.Size(166, 32);
             this.btn_vender.TabIndex = 11;
@@ -241,7 +209,7 @@
             this.eliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.eliminar.Image = ((System.Drawing.Image)(resources.GetObject("eliminar.Image")));
             this.eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.eliminar.Location = new System.Drawing.Point(102, 242);
+            this.eliminar.Location = new System.Drawing.Point(102, 223);
             this.eliminar.Name = "eliminar";
             this.eliminar.Size = new System.Drawing.Size(166, 32);
             this.eliminar.TabIndex = 10;
@@ -277,6 +245,8 @@
             this.bunifuCards1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.Navy;
+            this.bunifuCards1.Controls.Add(this.button2);
+            this.bunifuCards1.Controls.Add(this.button1);
             this.bunifuCards1.Controls.Add(this.pictureBox1);
             this.bunifuCards1.Controls.Add(this.bunifuCustomLabel1);
             this.bunifuCards1.Controls.Add(this.btn_vender);
@@ -287,9 +257,8 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(343, 397);
+            this.bunifuCards1.Size = new System.Drawing.Size(343, 433);
             this.bunifuCards1.TabIndex = 13;
-            this.bunifuCards1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuCards1_Paint);
             // 
             // pictureBox1
             // 
@@ -316,35 +285,108 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(168, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(149, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(457, 132);
+            this.pictureBox2.Size = new System.Drawing.Size(476, 160);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             // 
-            // Facturas
+            // productotxt
+            // 
+            this.productotxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.productotxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.productotxt.Font = new System.Drawing.Font("Century Gothic", 9.25F);
+            this.productotxt.Location = new System.Drawing.Point(140, 195);
+            this.productotxt.Name = "productotxt";
+            this.productotxt.Size = new System.Drawing.Size(114, 23);
+            this.productotxt.TabIndex = 15;
+            this.productotxt.TextChanged += new System.EventHandler(this.productotxt_TextChanged_1);
+            // 
+            // cantidadtxt
+            // 
+            this.cantidadtxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cantidadtxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cantidadtxt.Location = new System.Drawing.Point(273, 195);
+            this.cantidadtxt.Name = "cantidadtxt";
+            this.cantidadtxt.Size = new System.Drawing.Size(83, 20);
+            this.cantidadtxt.TabIndex = 16;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Green;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(102, 376);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(166, 32);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Factura clientes";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Green;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(102, 272);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(166, 32);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Buscar clientes";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // fechatxt
+            // 
+            this.fechatxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fechatxt.Font = new System.Drawing.Font("Century Gothic", 12.75F);
+            this.fechatxt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fechatxt.HintForeColor = System.Drawing.Color.Empty;
+            this.fechatxt.HintText = "";
+            this.fechatxt.isPassword = false;
+            this.fechatxt.LineFocusedColor = System.Drawing.Color.Red;
+            this.fechatxt.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(124)))));
+            this.fechatxt.LineMouseHoverColor = System.Drawing.Color.Blue;
+            this.fechatxt.LineThickness = 3;
+            this.fechatxt.Location = new System.Drawing.Point(696, 118);
+            this.fechatxt.Margin = new System.Windows.Forms.Padding(4);
+            this.fechatxt.Name = "fechatxt";
+            this.fechatxt.Size = new System.Drawing.Size(135, 41);
+            this.fechatxt.TabIndex = 22;
+            this.fechatxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // frm_facturasventas
             // 
             this.AcceptButton = this.colocar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1119, 642);
+            this.Controls.Add(this.fechatxt);
+            this.Controls.Add(this.cantidadtxt);
+            this.Controls.Add(this.productotxt);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.bunifuCards1);
             this.Controls.Add(this.resultadotxt);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.clientetxt);
             this.Controls.Add(this.txtnombre);
-            this.Controls.Add(this.fechatxt);
             this.Controls.Add(this.preciotxt);
-            this.Controls.Add(this.cantidadtxt);
-            this.Controls.Add(this.productotxt);
             this.Controls.Add(this.codigoprotxt);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
-            this.Name = "Facturas";
+            this.Name = "frm_facturasventas";
             this.Text = "Facturas";
             this.Load += new System.EventHandler(this.Facturas_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Facturas_KeyDown);
@@ -362,13 +404,9 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox codigoprotxt;
-        private System.Windows.Forms.TextBox productotxt;
-        private System.Windows.Forms.TextBox cantidadtxt;
         private System.Windows.Forms.TextBox preciotxt;
-        private System.Windows.Forms.TextBox fechatxt;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label txtnombre;
-        private System.Windows.Forms.TextBox clientetxt;
         private System.Windows.Forms.Button colocar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label resultadotxt;
@@ -383,5 +421,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox productotxt;
+        private System.Windows.Forms.TextBox cantidadtxt;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox fechatxt;
     }
 }

@@ -107,5 +107,19 @@ namespace cDatos
 
             conexion.EscribirPorStoreProcedure("REGISTRARUSUARIO", parametros);
         }
+        public void modificarnuevousuario(string username, string password, string permiso, string nombre, string apellido)
+        {
+            Int64 dni;
+            Int64.TryParse(username, out dni);
+
+            SqlParameter[] parametros = new SqlParameter[5];
+            parametros[0] = conexion.crearParametro("@dni", dni);
+            parametros[1] = conexion.crearParametro("@contra", password);
+            parametros[2] = conexion.crearParametro("@cargo", permiso);
+            parametros[3] = conexion.crearParametro("@nombre", nombre);
+            parametros[4] = conexion.crearParametro("@apellido", apellido);
+
+            conexion.EscribirPorStoreProcedure("MODIFICAR_USUARIO", parametros);
+        }
     }
 }

@@ -29,6 +29,11 @@ namespace bControl
             DataTable clientes=conexionDALcliente.listar_Clientes();
             return clientes;
         }
+        public DataTable contar_Clientes()
+        {
+            DataTable clientes = conexionDALcliente.contar();
+            return clientes;
+        }
 
         public bool crear_Cliente(string nombre,string apellido,string email,string tipo)
         {

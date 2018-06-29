@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using bControl;
 
 namespace sistemadia
 {
@@ -78,6 +79,12 @@ namespace sistemadia
             cargarGridView();
             descargartextbox();
             cmbox_tipo.DropDownStyle = ComboBoxStyle.DropDownList;
+            txtBox_nombre.Focus();
+            DataTable ds;
+            Clientes cliente = new Clientes();
+            ds=cliente.contar_Clientes();
+            label2.Text = ds.Rows[0][0].ToString();
+           
         }
 
 
@@ -91,6 +98,10 @@ namespace sistemadia
                     if (conexioncliente.crear_Cliente(txtBox_nombre.Text.ToString(),txtbox_apellido.Text.ToString(),txtbox_email.Text.ToString(),cmbox_tipo.SelectedItem.ToString()))
                     {
                         dtView_Clientes.DataSource = conexioncliente.listar_Clientes();
+                        DataTable ds;
+                        Clientes cliente = new Clientes();
+                        ds = cliente.contar_Clientes();
+                        label2.Text = ds.Rows[0][0].ToString();
                         descargartextbox();
                         MessageBox.Show("Cliente creado exitosamente");
                     }
@@ -206,5 +217,7 @@ namespace sistemadia
         }
 
         #endregion
+
+
     }
 }

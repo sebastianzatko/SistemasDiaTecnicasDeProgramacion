@@ -27,10 +27,21 @@ namespace cDatos
 
             
         }
-       
+        public DataTable contar()
+        {
+            string consultar = "SELECT COUNT (ID_PRODUCTO) FROM PRODUCTO WHERE HABILITADO=1";
+            DataTable RESUTALDO = conexionpro.LeerPorComando(consultar);
+            return RESUTALDO;
+        }
         public DataTable obtenerproducto()
         {
             string consulta = "SELECT COD_PRODUCTO,NOMBRE,PRECIO,TIPO,DISPONIBILIDAD FROM PRODUCTO WHERE HABILITADO=1";
+            DataTable resultado = conexionpro.LeerPorComando(consulta);
+            return resultado;
+        }
+        public DataTable obtenercodigo(string codigos)
+        {
+            string consulta = "SELECT COD_PRODUCTO,NOMBRE,PRECIO,TIPO,DISPONIBILIDAD FROM PRODUCTO WHERE HABILITADO=1 AND COD_PRODUCTO ='" + codigos + " '";
             DataTable resultado = conexionpro.LeerPorComando(consulta);
             return resultado;
         }
@@ -42,7 +53,25 @@ namespace cDatos
         }
         public DataTable obtenerstocks()
         {
-            string consulta = "SELECT COD_PRODUCTO,NOMBRE,PRECIO,TIPO,DISPONIBILIDAD FROM PRODUCTO WHERE HABILITADO=1 AND DISPONIBILIDAD < 80";
+            string consulta = "SELECT COD_PRODUCTO,NOMBRE,PRECIO,TIPO,DISPONIBILIDAD FROM PRODUCTO WHERE HABILITADO=1 AND DISPONIBILIDAD < 150";
+            DataTable resultado = conexionpro.LeerPorComando(consulta);
+            return resultado;
+        }
+        public DataTable obtenerProductosdelproveedor(string id_proveedor)
+        {
+            string consulta = string.Format("SELECT PROVEE.ID_PRODUCTO,PRODUCTO.NOMBRE,PRODUCTO.PRECIO,PRODUCTO.TIPO,PRODUCTO.COD_PRODUCTO FROM PROVEE,PRODUCTO WHERE PROVEE.ID_PROVEDOR={0} AND PRODUCTO.HABILITADO=1 AND PRODUCTO.ID_PRODUCTO=PROVEE.ID_PRODUCTO", id_proveedor);
+            DataTable resultado = conexionpro.LeerPorComando(consulta);
+            return resultado;
+        }
+        public DataTable obtenerProductoporid(string id_producto)
+        {
+            string consulta = string.Format("SELECT ID_PRODUCTO,NOMBRE,PRECIO,TIPO,COD_PRODUCTO FROM PRODUCTO WHERE ID_PRODUCTO={0}",id_producto);
+            DataTable resultado = conexionpro.LeerPorComando(consulta);
+            return resultado;
+        }
+        public DataTable obtenerProductopornombre(string nombre)
+        {
+            string consulta = string.Format("SELECT ID_PRODUCTO,NOMBRE,PRECIO,TIPO,COD_PRODUCTO FROM PRODUCTO WHERE NOMBRE='{0}' AND HABILITADO=1", nombre);
             DataTable resultado = conexionpro.LeerPorComando(consulta);
             return resultado;
         }
@@ -91,6 +120,12 @@ namespace cDatos
 
             conexionpro.EscribirPorStoreProcedure("ELIMINARPRODUCTO", parametros);
 
+        }
+
+        public void eliminarproductosdelproveedor(string id_producto,string id_proveedor)
+        {
+            string consulta = string.Format("DELETE FROM PROVEE WHERE ID_PRODUCTO={0} AND ID_PROVEDOR={1}",id_producto,id_proveedor);
+            conexionpro.EscribirPorComando(consulta);
         }
 
     }
