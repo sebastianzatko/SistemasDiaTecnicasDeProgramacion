@@ -341,8 +341,9 @@ namespace sistemadia
             {
                 MessageBox.Show("Producto no encontrado");
             }
+            txt_Producto.Text = "";
 
-
+            txt_Producto.Focus();
         }
 
         private void btn_addproductproveedor_Click(object sender, EventArgs e)
@@ -445,6 +446,11 @@ namespace sistemadia
                 dtGridView_ProductosdelProveedor.Columns[0].Visible = false;
                 deshabilitarotroHeader();
 
+        }
+
+        private void btn_deseleccionar_Click_1(object sender, EventArgs e)
+        {
+            descargarTextsBox();
         }
     }
 }

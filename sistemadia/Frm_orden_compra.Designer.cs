@@ -40,7 +40,6 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btn_vender = new System.Windows.Forms.Button();
             this.eliminar = new System.Windows.Forms.Button();
-            this.colocar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.cmbox_proveedores = new System.Windows.Forms.ComboBox();
@@ -109,7 +108,6 @@
             this.bunifuCards1.Controls.Add(this.bunifuCustomLabel1);
             this.bunifuCards1.Controls.Add(this.btn_vender);
             this.bunifuCards1.Controls.Add(this.eliminar);
-            this.bunifuCards1.Controls.Add(this.colocar);
             this.bunifuCards1.LeftSahddow = false;
             this.bunifuCards1.Location = new System.Drawing.Point(569, 202);
             this.bunifuCards1.Name = "bunifuCards1";
@@ -129,7 +127,7 @@
             this.btn_agregaproducto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_agregaproducto.Image = ((System.Drawing.Image)(resources.GetObject("btn_agregaproducto.Image")));
             this.btn_agregaproducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_agregaproducto.Location = new System.Drawing.Point(102, 218);
+            this.btn_agregaproducto.Location = new System.Drawing.Point(102, 184);
             this.btn_agregaproducto.Name = "btn_agregaproducto";
             this.btn_agregaproducto.Size = new System.Drawing.Size(181, 32);
             this.btn_agregaproducto.TabIndex = 14;
@@ -168,7 +166,7 @@
             this.btn_vender.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_vender.Image = ((System.Drawing.Image)(resources.GetObject("btn_vender.Image")));
             this.btn_vender.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_vender.Location = new System.Drawing.Point(102, 331);
+            this.btn_vender.Location = new System.Drawing.Point(102, 318);
             this.btn_vender.Name = "btn_vender";
             this.btn_vender.Size = new System.Drawing.Size(181, 32);
             this.btn_vender.TabIndex = 11;
@@ -187,31 +185,13 @@
             this.eliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.eliminar.Image = ((System.Drawing.Image)(resources.GetObject("eliminar.Image")));
             this.eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.eliminar.Location = new System.Drawing.Point(102, 274);
+            this.eliminar.Location = new System.Drawing.Point(102, 251);
             this.eliminar.Name = "eliminar";
             this.eliminar.Size = new System.Drawing.Size(181, 32);
             this.eliminar.TabIndex = 10;
             this.eliminar.Text = "Eliminar[F4]";
             this.eliminar.UseVisualStyleBackColor = false;
             this.eliminar.Click += new System.EventHandler(this.eliminar_Click);
-            // 
-            // colocar
-            // 
-            this.colocar.BackColor = System.Drawing.Color.Green;
-            this.colocar.Enabled = false;
-            this.colocar.FlatAppearance.BorderSize = 0;
-            this.colocar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.colocar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.colocar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colocar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.colocar.Image = ((System.Drawing.Image)(resources.GetObject("colocar.Image")));
-            this.colocar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.colocar.Location = new System.Drawing.Point(102, 159);
-            this.colocar.Name = "colocar";
-            this.colocar.Size = new System.Drawing.Size(181, 32);
-            this.colocar.TabIndex = 9;
-            this.colocar.Text = "Colocar[Enter]";
-            this.colocar.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -282,7 +262,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.Button btn_vender;
         private System.Windows.Forms.Button eliminar;
-        private System.Windows.Forms.Button colocar;
         private System.Windows.Forms.Button btn_agregaproducto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;

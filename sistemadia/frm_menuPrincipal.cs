@@ -230,5 +230,10 @@ namespace sistemadia
         {
             Abrirformhija(new frm_ordencomprafaltante());
         }
+
+        private void btn_ordencomprafaltante_Click_1(object sender, EventArgs e)
+        {
+            Abrirformhija(new frm_ordencomprafaltante());
+        }
     }
 }

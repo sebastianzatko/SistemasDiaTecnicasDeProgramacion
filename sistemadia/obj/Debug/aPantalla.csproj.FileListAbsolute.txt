@@ -34,7 +34,6 @@ C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\
 C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.exe
 C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.pdb
 C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.frm_Producto.resources
-C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.Facturas.resources
 C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\bin\Debug\Bunifu_UI_v1.5.3.dll
 C:\Users\Barbas\Desktop\SistemasDiaTecnicasDeProgramacion-alexis-actulizacion-dia\sistemadia\bin\Debug\sistemadia.exe.config
 C:\Users\Barbas\Desktop\SistemasDiaTecnicasDeProgramacion-alexis-actulizacion-dia\sistemadia\bin\Debug\sistemadia.exe
@@ -374,3 +373,13 @@ C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\sist
 C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.detalleOrdenDeCompra.resources
 C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.frm_ordencomprafaltante.resources
 C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.frm_detalleordencomprafaltante.resources
+C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.detalleOrdenDeCompra.resources
+C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.frm_Clientes.resources
+C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.frm_detalleordencomprafaltante.resources
+C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.frm_facturasventas.resources
+C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.frm_ordencomprafaltante.resources
+C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.Frm_orden_compra.resources
+C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.selecion_ordendecompra.resources
+C:\Users\alexis\Desktop\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.cliente_factura.resources
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\sistemadia\obj\Debug\sistemadia.cliente_factura.resources
+C:\Users\Barbas\Desktop\sistemadia\SistemasDiaTecnicasDeProgramacion-master\sistemadia\bin\Debug\Control.dll.config

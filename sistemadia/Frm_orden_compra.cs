@@ -25,7 +25,7 @@ namespace sistemadia
         private void button1_Click(object sender, EventArgs e)
         {
             selecion_ordendecompra com = new selecion_ordendecompra(id_provedor);
-            
+           
             com.ShowDialog();
             if (com.DialogResult == DialogResult.OK)
             {

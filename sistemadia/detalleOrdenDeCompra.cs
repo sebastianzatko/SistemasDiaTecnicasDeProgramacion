@@ -44,8 +44,10 @@ namespace sistemadia
             textboxColumn.Name = "CANTIDADREAL";
             textboxColumn.ReadOnly = false;
             dtView_DetalleOrdenCompra.Columns[0].ReadOnly = true;
+            dtView_DetalleOrdenCompra.Columns[0].Visible = false;
             dtView_DetalleOrdenCompra.Columns[1].ReadOnly = true;
             dtView_DetalleOrdenCompra.Columns[2].ReadOnly = true;
+            dtView_DetalleOrdenCompra.Columns[3].ReadOnly = true;
             dtView_DetalleOrdenCompra.Columns.Add(textboxColumn);
         }
 
@@ -85,17 +87,13 @@ namespace sistemadia
         }
 
 
-        private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        {
-            DataGridViewTextBoxEditingControl tb = (DataGridViewTextBoxEditingControl)e.Control;
-            tb.KeyPress += new KeyPressEventHandler(dataGridViewTextBox_KeyPress);
-
-            e.Control.KeyPress += new KeyPressEventHandler(dataGridViewTextBox_KeyPress);
-        }
+        
 
         private void dataGridViewTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.solonumero(e);
         }
+
+        
     }
 }

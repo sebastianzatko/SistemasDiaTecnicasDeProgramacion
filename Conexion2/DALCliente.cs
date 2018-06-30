@@ -24,6 +24,12 @@ namespace cDatos
             DataTable RESUTALDO = conexion.LeerPorComando(consultar);
             return RESUTALDO;
         }
+        public DataTable BUSCAR(string text)
+        {
+            string consulta = "SELECT ID_CLIENTE AS CODIGO,NOMBRE,APELLIDO,EMAIL,TIPO FROM CLIENTE WHERE HABILITADO=1 AND NOMBRE Like('%" + text + "%') or ID_CLIENTE  Like('%" + text + "%') ";
+            DataTable resultado = conexion.LeerPorComando(consulta);
+            return resultado;
+        }
         public void guardar_Cliente(string nombre,string apellido,string email,string tipo)
         {
             SqlParameter[] parametros = new SqlParameter[4];

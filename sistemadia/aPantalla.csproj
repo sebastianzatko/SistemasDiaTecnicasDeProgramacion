@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cliente_factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cliente_factura.Designer.cs">
+      <DependentUpon>cliente_factura.cs</DependentUpon>
+    </Compile>
     <Compile Include="detalleOrdenDeCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
       <DependentUpon>sistemadiatomasDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="cliente_factura.resx">
+      <DependentUpon>cliente_factura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="detalleOrdenDeCompra.resx">
       <DependentUpon>detalleOrdenDeCompra.cs</DependentUpon>
     </EmbeddedResource>

@@ -125,8 +125,21 @@ namespace sistemadia
 
 
             resultadotxt.Text ="$"+ totalidad.ToString("N2");
+            if (dataGridView1.Rows.Count==0)
+            {
+                btn_vender.Enabled = false ;
+                button1.Enabled = false ;
+                eliminar.Enabled = false;
+
+            }
+            else
+            {
+                btn_vender.Enabled = true;
+                button1.Enabled = true;
+                eliminar.Enabled = true;
+            }
         }
-        SqlConnection cmm = new SqlConnection("Data Source=TCL;Initial Catalog=sistemadia;Integrated Security=True");
+        SqlConnection cmm = new SqlConnection("Data Source=DESKTOP-3FQKM1M\\SQLEXPRESS;Initial Catalog=sistemadiatomas;Integrated Security=True");
         private void productotxt_TextChanged(object sender, EventArgs e)
         {
           
@@ -145,6 +158,19 @@ namespace sistemadia
                 dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
 
                 cont_fila--;
+            }
+            if (dataGridView1.Rows.Count == 0)
+            {
+                btn_vender.Enabled = false;
+                button1.Enabled = false;
+                eliminar.Enabled = false;
+
+            }
+            else
+            {
+                btn_vender.Enabled = true;
+                button1.Enabled = true;
+                eliminar.Enabled = true;
             }
         }
 
@@ -167,7 +193,7 @@ namespace sistemadia
             }
         }
         public string codigocliente;
-        public string completa ="comsumidor final";
+        public string completa ="consumidor final";
         private void clientetxt_TextChanged(object sender, EventArgs e)
         {
             
@@ -285,11 +311,60 @@ namespace sistemadia
 
             
         }
-
+        string clien;
+        string tipo;
         private void button2_Click(object sender, EventArgs e)
         {
-            frm_Clientes emple = new frm_Clientes();
-            emple.Show();
+            cliente_factura com = new cliente_factura();
+            com.ShowDialog();
+           
+
+               
+                    if (com.DialogResult == DialogResult.OK)
+                    {
+                        clientes1.Text = com.dtView_cliente.Rows[com.dtView_cliente.CurrentRow.Index].Cells[0].Value.ToString();
+                        tipo = com.dtView_cliente.Rows[com.dtView_cliente.CurrentRow.Index].Cells[1].Value.ToString();
+                       
+
+
+                    }
+               
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            completar();
+            venta.Agregarventa(vendedor, clientes1.Text, fechatxt.Text);
+            DataTable ds;
+            ds = venta.ventamax();
+            factu = ds.Rows[0][0].ToString();
+            foreach (DataGridViewRow fila in dataGridView1.Rows)
+            {
+
+                venta.ventapro(factu, Convert.ToString(fila.Cells[0].Value), Convert.ToString(fila.Cells[2].Value));
+            }
+            reporte_factura fer = new reporte_factura();
+
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                reportfactu c = new reportfactu();
+                c.nombre = (string)this.dataGridView1.Rows[i].Cells[1].Value;
+                c.cantidad = (string)this.dataGridView1.Rows[i].Cells[2].Value;
+                c.precio = (string)this.dataGridView1.Rows[i].Cells[3].Value;
+                c.importe = (decimal)this.dataGridView1.Rows[i].Cells[4].Value;
+                c.fecha = fechatxt.Text;
+                c.total = resultadotxt.Text;
+                fer.dato.Add(c);
+            }
+            fer.ShowDialog();
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
         }
     }
 }
+
