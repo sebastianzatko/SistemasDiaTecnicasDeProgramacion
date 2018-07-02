@@ -44,11 +44,19 @@ namespace sistemadia
 
             factu = ds.Rows[0][0].ToString();
 
-
+            dataGridView1.Rows.Clear();
+            resultadotxt.Text = "";
+            cont_fila = 0;
+            totalidad = 0;
 
             autocompletar AU = new autocompletar();
             AU.AutoCompletar(productotxt);
             productotxt.Focus();
+            deshabilitarHeader();
+            dataGridView1.Columns[0].ReadOnly = true;
+            dataGridView1.Columns[1].ReadOnly = true;
+            dataGridView1.Columns[3].ReadOnly = true;
+            dataGridView1.Columns[4].ReadOnly = true;
         }
         public static decimal totalidad;
         public static int cont_fila = 0;
@@ -86,7 +94,7 @@ namespace sistemadia
                 {
                     foreach (DataGridViewRow FILA in dataGridView1.Rows)
                     {
-                        if (FILA.Cells[0].Value.ToString() == codigoprotxt.Text)
+                        if (FILA.Cells[0].Value.ToString() == codigo)
                         {
                             existe = true;
                             num_fila = FILA.Index;
@@ -247,6 +255,11 @@ namespace sistemadia
                     fer.dato.Add(c);
                 }
                 fer.ShowDialog();
+                dataGridView1.Rows.Clear();
+                resultadotxt.Text = "";
+                cont_fila = 0;
+                totalidad = 0;
+                productotxt.Focus();
             }
         }
 
@@ -359,11 +372,26 @@ namespace sistemadia
                 fer.dato.Add(c);
             }
             fer.ShowDialog();
+            dataGridView1.Rows.Clear();
+            resultadotxt.Text = "";
+            cont_fila = 0;
+            totalidad = 0;
+            productotxt.Focus();
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
+            resultadotxt.Text = "";
+        }
+
+        private void deshabilitarHeader()
+        {
+            foreach (DataGridViewColumn columna in dataGridView1.Columns)
+            {
+
+                columna.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
         }
     }
 }

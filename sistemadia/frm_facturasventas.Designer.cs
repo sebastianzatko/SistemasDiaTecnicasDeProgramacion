@@ -58,8 +58,6 @@
             this.cantidadtxt = new System.Windows.Forms.TextBox();
             this.fechatxt = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.clientes1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btn_cancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.bunifuCards1.SuspendLayout();
@@ -144,7 +142,7 @@
             // 
             // preciotxt
             // 
-            this.preciotxt.Location = new System.Drawing.Point(583, 195);
+            this.preciotxt.Location = new System.Drawing.Point(400, 195);
             this.preciotxt.Name = "preciotxt";
             this.preciotxt.Size = new System.Drawing.Size(78, 20);
             this.preciotxt.TabIndex = 4;
@@ -340,7 +338,7 @@
             this.productotxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.productotxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.productotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.productotxt.Location = new System.Drawing.Point(166, 195);
+            this.productotxt.Location = new System.Drawing.Point(140, 194);
             this.productotxt.Name = "productotxt";
             this.productotxt.Size = new System.Drawing.Size(114, 21);
             this.productotxt.TabIndex = 15;
@@ -350,7 +348,7 @@
             // 
             this.cantidadtxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cantidadtxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cantidadtxt.Location = new System.Drawing.Point(344, 195);
+            this.cantidadtxt.Location = new System.Drawing.Point(276, 194);
             this.cantidadtxt.Name = "cantidadtxt";
             this.cantidadtxt.Size = new System.Drawing.Size(83, 20);
             this.cantidadtxt.TabIndex = 16;
@@ -384,32 +382,17 @@
             this.clientes1.TabIndex = 23;
             this.clientes1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 200);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 13);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Nombre del producto";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(286, 202);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Cantidad:";
-            // 
             // btn_cancelar
             // 
+            this.btn_cancelar.BackColor = System.Drawing.Color.Green;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_cancelar.Location = new System.Drawing.Point(550, 584);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelar.Size = new System.Drawing.Size(91, 32);
             this.btn_cancelar.TabIndex = 26;
             this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // frm_facturasventas
@@ -418,10 +401,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1119, 642);
+            this.ClientSize = new System.Drawing.Size(1119, 689);
             this.Controls.Add(this.btn_cancelar);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.clientes1);
             this.Controls.Add(this.fechatxt);
             this.Controls.Add(this.cantidadtxt);
@@ -477,8 +458,6 @@
         private System.Windows.Forms.Button button1;
         private Bunifu.Framework.UI.BunifuMaterialTextbox fechatxt;
         private System.Windows.Forms.Label clientes1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_cancelar;
     }
 }

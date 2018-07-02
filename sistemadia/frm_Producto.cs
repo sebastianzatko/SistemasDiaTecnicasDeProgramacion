@@ -36,6 +36,7 @@ namespace sistemadia
             GridVw_producto.Columns[2].ReadOnly = true;
             GridVw_producto.Columns[3].ReadOnly = true;
             GridVw_producto.Columns[4].ReadOnly = true;
+            deshabilitarHeader();
 
 
 
@@ -131,6 +132,30 @@ namespace sistemadia
             {
 
                 columna.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
+
+        private void GridVw_producto_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.GridVw_producto.Columns[e.ColumnIndex].Name == "DISPONIBILIDAD")
+            {
+                if (Convert.ToInt32(e.Value) <= 800)
+                {
+                    e.CellStyle.ForeColor = Color.Black;
+                    e.CellStyle.BackColor = Color.Green;
+                    if (Convert.ToInt32(e.Value) <= 200)
+                    {
+                        e.CellStyle.ForeColor = Color.Black;
+                        e.CellStyle.BackColor = Color.Yellow;
+                        if (Convert.ToInt32(e.Value) <= 80)
+                        {
+                            e.CellStyle.ForeColor = Color.Black;
+                            e.CellStyle.BackColor = Color.Red;
+
+                        }
+
+                    }
+                }
             }
         }
 
