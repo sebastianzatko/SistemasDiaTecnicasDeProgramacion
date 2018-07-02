@@ -18,7 +18,7 @@ namespace bControl
         SqlDataReader cnr;
 
 
-        SqlConnection cmm = new SqlConnection("Data Source=DESKTOP-3FQKM1M\\SQLEXPRESS;Initial Catalog=sistemadiatomas;Integrated Security=True");
+        SqlConnection cmm = new SqlConnection("workstation id=sistemadia.mssql.somee.com;packet size=4096;user id=miguel2_SQLLogin_1;pwd=6xvz3jtus7;data source=sistemadia.mssql.somee.com;persist security info=False;initial catalog=sistemadia");
 
 
 

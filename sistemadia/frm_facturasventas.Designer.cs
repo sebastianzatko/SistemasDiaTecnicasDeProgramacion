@@ -59,6 +59,9 @@
             this.fechatxt = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.clientes1 = new System.Windows.Forms.Label();
             this.btn_cancelar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.bunifuCards1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -134,15 +137,15 @@
             // 
             // codigoprotxt
             // 
-            this.codigoprotxt.Location = new System.Drawing.Point(26, 195);
+            this.codigoprotxt.Location = new System.Drawing.Point(81, 197);
             this.codigoprotxt.Name = "codigoprotxt";
+            this.codigoprotxt.ReadOnly = true;
             this.codigoprotxt.Size = new System.Drawing.Size(87, 20);
             this.codigoprotxt.TabIndex = 1;
-            this.codigoprotxt.Visible = false;
             // 
             // preciotxt
             // 
-            this.preciotxt.Location = new System.Drawing.Point(400, 195);
+            this.preciotxt.Location = new System.Drawing.Point(529, 171);
             this.preciotxt.Name = "preciotxt";
             this.preciotxt.Size = new System.Drawing.Size(78, 20);
             this.preciotxt.TabIndex = 4;
@@ -338,9 +341,9 @@
             this.productotxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.productotxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.productotxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            this.productotxt.Location = new System.Drawing.Point(140, 194);
+            this.productotxt.Location = new System.Drawing.Point(330, 196);
             this.productotxt.Name = "productotxt";
-            this.productotxt.Size = new System.Drawing.Size(114, 21);
+            this.productotxt.Size = new System.Drawing.Size(134, 21);
             this.productotxt.TabIndex = 15;
             this.productotxt.TextChanged += new System.EventHandler(this.productotxt_TextChanged_1);
             // 
@@ -348,7 +351,7 @@
             // 
             this.cantidadtxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cantidadtxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.cantidadtxt.Location = new System.Drawing.Point(276, 194);
+            this.cantidadtxt.Location = new System.Drawing.Point(541, 199);
             this.cantidadtxt.Name = "cantidadtxt";
             this.cantidadtxt.Size = new System.Drawing.Size(83, 20);
             this.cantidadtxt.TabIndex = 16;
@@ -381,6 +384,7 @@
             this.clientes1.Size = new System.Drawing.Size(100, 23);
             this.clientes1.TabIndex = 23;
             this.clientes1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.clientes1.Visible = false;
             // 
             // btn_cancelar
             // 
@@ -395,6 +399,33 @@
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(470, 199);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "CANTIDAD:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(203, 199);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(121, 13);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "NOMBRE PRODUCTO:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(23, 201);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "CODIGO:";
+            // 
             // frm_facturasventas
             // 
             this.AcceptButton = this.colocar;
@@ -402,6 +433,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1119, 689);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.clientes1);
             this.Controls.Add(this.fechatxt);
@@ -459,5 +493,8 @@
         private Bunifu.Framework.UI.BunifuMaterialTextbox fechatxt;
         private System.Windows.Forms.Label clientes1;
         private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

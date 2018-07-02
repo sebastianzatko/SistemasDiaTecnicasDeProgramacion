@@ -72,37 +72,49 @@ namespace sistemadia
             }
             else
             {
-                DataTable dt;
-                dt = producto.produccodigo(codigo);
-                cod = dt.Rows[0][0].ToString();
-                if (cod == codigo_productotxt.Text.Trim())
+                
+                
+                    
+
+                if(producto.Agregar(nombreproductotxt.Text, disponibilidadtxt.Text, preciotxt.Text, tipotxt.Text, codigo_productotxt.Text))
                 {
-                    MessageBox.Show("este codigo ya exites");
+                    DataTable DD;
+                    DD = producto.CONTAR();
+                    label2.Text = DD.Rows[0][0].ToString();
+
+                    MessageBox.Show("Se ha creado un nuevo producto");
+                    DataTable ds;
+                    ds = producto.productolist();
+                    GridVw_producto.DataSource = ds;
+                    GridVw_producto.Columns[0].ReadOnly = true;
+                    GridVw_producto.Columns[1].ReadOnly = true;
+                    GridVw_producto.Columns[2].ReadOnly = true;
+                    GridVw_producto.Columns[3].ReadOnly = true;
+                    GridVw_producto.Columns[4].ReadOnly = true;
+                    deshabilitarHeader();
+
                 }
                 else
                 {
-                    
+                    producto.actualizar(nombreproductotxt.Text, disponibilidadtxt.Text, preciotxt.Text, tipotxt.Text, codigo_productotxt.Text);
+                    DataTable DD;
+                    DD = producto.CONTAR();
+                    label2.Text = DD.Rows[0][0].ToString();
 
-                   if(producto.Agregar(nombreproductotxt.Text, disponibilidadtxt.Text, preciotxt.Text, tipotxt.Text, codigo_productotxt.Text))
-                    {
-                        DataTable DD;
-                        DD = producto.CONTAR();
-                        label2.Text = DD.Rows[0][0].ToString();
-
-                        MessageBox.Show("Se ha creado un nuevo producto");
-                        DataTable ds;
-                        ds = producto.productolist();
-                        GridVw_producto.DataSource = ds;
-                        GridVw_producto.Columns[0].ReadOnly = true;
-                        GridVw_producto.Columns[1].ReadOnly = true;
-                        GridVw_producto.Columns[2].ReadOnly = true;
-                        GridVw_producto.Columns[3].ReadOnly = true;
-                        GridVw_producto.Columns[4].ReadOnly = true;
-                        deshabilitarHeader();
-
-                    }
-                   
+                    MessageBox.Show("Se ha modificado un producto");
+                    DataTable ds;
+                    ds = producto.productolist();
+                    GridVw_producto.DataSource = ds;
+                    GridVw_producto.Columns[0].ReadOnly = true;
+                    GridVw_producto.Columns[1].ReadOnly = true;
+                    GridVw_producto.Columns[2].ReadOnly = true;
+                    GridVw_producto.Columns[3].ReadOnly = true;
+                    GridVw_producto.Columns[4].ReadOnly = true;
+                    deshabilitarHeader();
                 }
+                    
+                   
+                
 
             }
             codigo_productotxt.Text = string.Empty;
@@ -139,15 +151,15 @@ namespace sistemadia
         {
             if (this.GridVw_producto.Columns[e.ColumnIndex].Name == "DISPONIBILIDAD")
             {
-                if (Convert.ToInt32(e.Value) <= 800)
+                if (Convert.ToInt32(e.Value) <= 1000)
                 {
                     e.CellStyle.ForeColor = Color.Black;
                     e.CellStyle.BackColor = Color.Green;
-                    if (Convert.ToInt32(e.Value) <= 200)
+                    if (Convert.ToInt32(e.Value) <= 300)
                     {
                         e.CellStyle.ForeColor = Color.Black;
                         e.CellStyle.BackColor = Color.Yellow;
-                        if (Convert.ToInt32(e.Value) <= 80)
+                        if (Convert.ToInt32(e.Value) <= 150)
                         {
                             e.CellStyle.ForeColor = Color.Black;
                             e.CellStyle.BackColor = Color.Red;
