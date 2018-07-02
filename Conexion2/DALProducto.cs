@@ -100,11 +100,11 @@ namespace cDatos
             Decimal pre;
             Decimal.TryParse(PRECIO, out pre);
 
-            SqlParameter[] parametros = new SqlParameter[5];
+            SqlParameter[] parametros = new SqlParameter[4];
             parametros[0] = conexionpro.crearParametro("@NOMBRE", NOMBRE);
-            parametros[2] = conexionpro.crearParametro("@PRECIO", PRECIO);
-            parametros[3] = conexionpro.crearParametro("@TIPO", TIPO);
-            parametros[4] = conexionpro.crearParametro("@COD_PRODUCTO", COD_PRODUCTO);
+            parametros[1] = conexionpro.crearParametro("@PRECIO", PRECIO);
+            parametros[2] = conexionpro.crearParametro("@TIPO", TIPO);
+            parametros[3] = conexionpro.crearParametro("@COD_PRODUCTO", COD_PRODUCTO);
 
             conexionpro.EscribirPorStoreProcedure("MODIFICARPRODUCTO", parametros);
 
